@@ -1,0 +1,37 @@
+iOS iOS iOS iOS iOS iOS iOS 
+Mac Mac Mac 
+Alamofire Alamofire Alamofire
+Swift Swift Swift Swift Swift
+Objective-C Objective-C Objective-C 
+AFNetworking
+ASIHTTPRequest
+Cocoapods Cocoapods Cocoapods Cocoapods 
+SnapKit SnapKit SnapKit SnapKit 
+FMDB/SQLite FMDB FMDB FMDB
+CoreData
+ARC
+SwiftyJSON
+Notification
+NSURLSession
+Socket
+Scheme
+GCD/NSOperation
+MBProgressHUD
+SVGPullToRefresh
+SDWebImage
+Zbar
+Node.js Node.js Node.js Node.js
+Instrument Instrument Instrument Instrument Instrument Instrument 
+Git/SVN
+md5/AES
+NSXMLParser
+AutoLayout AutoLayout AutoLayout AutoLayout 
+WKWebView
+Github Github Github Github
+ZXTools ZXTools ZXTools
+Quartz2d Quartz2d Quartz2d Quartz2d Quartz2d 
+
+
+https://worditout.com/word-cloud/create
+
+<svg width="716" height="447" viewBox="0 0 716 447" style="width: 100%; height: 100%; display: block; position: absolute;"><rect width="716" height="447" style="fill: rgb(0, 0, 0);"></rect><text x="336" y="242.80" class="Jura cA " style="fill: rgb(227, 176, 195); font-size: 72px;">iOS</text><text x="263" y="265.20" class="Jura cA " style="fill: rgb(241, 111, 159); font-size: 18px;">SVGPullToRefresh</text><text x="319" y="306.40" class="Jura cA " style="fill: rgb(213, 241, 231); font-size: 46px;">AutoLayout</text><text x="279" y="175.60" class="Jura cA " style="fill: rgb(220, 209, 213); font-size: 54px;">Swift</text><text x="227" y="246.40" class="Jura cA " style="fill: rgb(220, 209, 213); font-size: 36px;">FMDB</text><text x="210" y="213.20" class="Jura cA " style="fill: rgb(220, 209, 213); font-size: 18px;">NSXMLParser</text><text x="267" y="350.40" class="Jura cA " style="fill: rgb(227, 176, 195); font-size: 46px;">Node.js</text><text x="266" y="196.20" class="Jura cA " style="fill: rgb(234, 144, 177); font-size: 18px;">Socket</text><text x="312" y="124.40" class="Jura cA " style="fill: rgb(241, 111, 159); font-size: 46px;">SnapKit</text><text x="231" y="385.40" class="Jura cA " style="fill: rgb(227, 176, 195); font-size: 36px;">Alamofire</text><text x="167" y="282.20" class="Jura cA " style="fill: rgb(227, 176, 195); font-size: 18px;">ASIHTTPRequest</text><text x="118" y="79.60" class="Jura cA " style="fill: rgb(220, 209, 213); font-size: 64px;">Instrument</text><text x="237" y="299.20" class="Jura cA " style="fill: rgb(227, 176, 195); font-size: 18px;">Scheme</text><text x="419" y="177.20" class="Jura cA " style="fill: rgb(227, 176, 195); font-size: 18px;">md5/AES</text><text x="348" y="419.40" class="Jura cA " style="fill: rgb(234, 144, 177); font-size: 36px;">Objective-C</text><text x="419" y="160.20" class="Jura cA " style="fill: rgb(234, 144, 177); font-size: 18px;">Zbar</text><text x="453" y="228.20" class="Jura cA " style="fill: rgb(227, 176, 195); font-size: 18px;">CoreData</text><text x="452" y="245.20" class="Jura cA " style="fill: rgb(220, 209, 213); font-size: 18px;">SDWebImage</text><text x="174" y="126.20" class="Jura cA " style="fill: rgb(227, 176, 195); font-size: 18px;">NSURLSession</text><text x="452" y="211.20" class="Jura cA " style="fill: rgb(234, 144, 177); font-size: 18px;">WKWebView</text><text x="35" y="177.60" class="Jura cA " style="fill: rgb(227, 176, 195); font-size: 54px;">ZXTools</text><text x="452" y="262.20" class="Jura cA " style="fill: rgb(234, 144, 177); font-size: 18px;">SwiftyJSON</text><text x="458" y="350.40" class="Jura cA " style="fill: rgb(220, 209, 213); font-size: 46px;">Github</text><text x="452" y="194.20" class="Jura cA " style="fill: rgb(220, 209, 213); font-size: 18px;">GCD/NSOperation</text><text x="193" y="265.20" class="Jura cA " style="fill: rgb(213, 241, 231); font-size: 18px;">Git/SVN</text><text x="180" y="109.20" class="Jura cA " style="fill: rgb(234, 144, 177); font-size: 18px;">AFNetworking</text><text x="407" y="370.20" class="Jura cA " style="fill: rgb(227, 176, 195); font-size: 18px;">MBProgressHUD</text><text x="157" y="316.20" class="Jura cA " style="fill: rgb(220, 209, 213); font-size: 18px;">Notification</text><text x="60" y="428.40" class="Jura cA " style="fill: rgb(227, 176, 195); font-size: 46px;">Cocoapods</text><text x="469" y="160.20" class="Jura cA " style="fill: rgb(220, 209, 213); font-size: 18px;">FMDB/SQLite</text><text x="225" y="333.20" class="Jura cA " style="fill: rgb(213, 241, 231); font-size: 18px;">ARC</text><text x="143" y="245.40" class="Jura cA " style="fill: rgb(220, 209, 213); font-size: 36px;">Mac</text></svg>
