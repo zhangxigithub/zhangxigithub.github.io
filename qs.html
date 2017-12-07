@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<html>
+ <head>
+  <meta charset="utf-8" />
+  <style type="text/css">      
+li{ 
+	height: 60px;  
+   	padding: 10px;  
+ }  
+  </style>
+  
+  <script type="text/javascript">
+
+function lxyz(action,info,url)
+{
+	var isAndroid = navigator.userAgent.match(/android/gi);
+	var isIos     = navigator.userAgent.match(/iphone|ipod/gi);
+	var isClient  = navigator.userAgent.match(/lxyz/gi);
+
+	if(isClient == null)
+	{
+		window.location.href = url
+		return 
+	}
+
+	if(isIos)
+	{
+		try {
+			if(info == null)
+			{
+				webkit.messageHandlers.bridge.postMessage({"action":action});
+			}else
+			{
+				var message = info;
+				message["action"] = action;
+				webkit.messageHandlers.bridge.postMessage(message);
+			}
+		} catch (error){
+
+		}
+	}
+	if(isAndroid)
+	{
+		try {
+			if(info == null)
+			{
+				window.ActionBridge.post(JSON.stringify({"action":action})) 
+			}else
+			{
+				var message = info;
+				message["action"] = action;
+				window.ActionBridge.post(JSON.stringify(message)) 
+			}
+			
+		} catch (error){
+
+		}
+	}
+
+}
+
+
+function ShowArticle()
+{
+	//Album 为字符串数组，其他参数为字符串
+	var info =	
+{"SourceUrl":"http://lxyz.qiushi.chinaso.com/spxwk//20171130/1002700000002481512026882233869821_1.html",
+"TitleCN":"(测试)王岐山会见柬埔寨副首相梅森安",
+"SourceName":"测试来源",
+"PublishedAt":"2017-11-30 15:57:38",
+"Summary":"(测试摘要)王岐山会见柬埔寨副首相梅森安",
+"Sign":"",
+"Album" :["http://img5.daguan.com/group1/M00/00/34/CgrZE1ofugeAIMUdAAXwb3PqCNg705.jpg","http://img5.daguan.com/group1/M00/00/34/CgrZE1ofugeAIMUdAAXwb3PqCNg705.jpg","http://img5.daguan.com/group1/M00/00/34/CgrZE1ofugeAIMUdAAXwb3PqCNg705.jpg"],
+"PreviewImage":"http://img5.daguan.com/group1/M00/00/34/CgrZE1ofugeAIMUdAAXwb3PqCNg705.jpg"}
+
+	lxyz("ShowArticle",info,"http://lxyz.qiushi.chinaso.com/spxwk//20171130/1002700000002481512026882233869821_1.html");
+} 
+function ShowArticle2()
+{
+	var info ={"a":"b"}
+	lxyz("ShowArticle",info,"http://lxyz.qiushi.chinaso.com/spxwk//20171130/1002700000002481512026882233869821_1.html");
+} 
+function ShowArticle3()
+{
+	var info = null;
+	lxyz("ShowArticle",info,"http://lxyz.qiushi.chinaso.com/spxwk//20171130/1002700000002481512026882233869821_1.html");
+} 
+function back()
+{
+	lxyz("Back");
+} 
+function Share1()
+{
+	lxyz("Share",{"platform":"wechat_timeline"});
+} 
+function Share2()
+{
+	lxyz("Share",{"platform":"wechat_session"});
+} 
+function Share3()
+{
+	lxyz("Share",{"platform":"weibo"});
+} 
+function Share4()
+{
+	lxyz("Share",{"platform":"xxxxx"});
+} 
+function version()
+{
+	lxyz("Version",{"callback":"versionCallback"});
+} 
+function versionCallback(message)
+{
+	alert(message);
+}
+
+  </script>
+
+ </head>
+
+<body>
+<ul>
+<!--<li><a href="javascript:back()">back</a></li>-->
+<li><a href="javascript:Share1()">Share-微信朋友圈</a></li>
+<li><a href="javascript:Share2()">Share-微信好友</a></li>
+<li><a href="javascript:Share3()">Share-微博</a></li>
+<li><a href="javascript:Share4()">Share-参数错误</a></li>
+<li><a href="javascript:ShowArticle()">ShowArticle</a></li>
+<li><a href="javascript:ShowArticle2()">ShowArticle-参数错误1</a></li>
+<li><a href="javascript:ShowArticle2()">ShowArticle-参数错误2</a></li>
+<!--<li><a href="javascript:version()">CheckVersion</a></li>-->
+</ul>
+
+
+
+ </body>
+
+
+</html>
