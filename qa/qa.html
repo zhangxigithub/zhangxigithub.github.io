@@ -1,0 +1,230 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>QA</title>
+<meta http-equiv="Access-Control-Allow-Origin" content="*">  
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" /> 
+<script src="./zepto.min.js"></script>
+<script src="./bridge.js"></script>
+<style type="text/css">
+.commentArea {
+    font: 15px Arial;
+    padding: 0 10px;
+    margin-top: 20px;    
+}
+
+.bubbledLeft,.bubbledRight {
+    margin-top: 20px;
+    padding: 5px 9px;
+    max-width: 50%;
+    clear: both;
+    position: relative;
+}
+
+.bubbledLeft{
+    float: left;
+    margin-right: auto;
+    -webkit-border-radius: 8px 8px 8px 0px;
+    -moz-border-radius: 8px 8px 8px 0px;
+    -o-border-radius: 8px 8px 8px 0px;
+    -ms-border-radius: 8px 8px 8px 0px;
+    border-radius: 8px 8px 8px 0px;
+    background-color: #65B045;
+    color: #ffffff;
+}
+
+.bubbledLeft:before {
+    border-bottom: 10px solid #65B045;
+    border-left: 9px solid rgba(0, 0, 0, 0);
+    position: absolute;
+    bottom: 0;
+    left: -8px;
+    content: "";
+}
+
+.bubbledRight{
+    float: right;
+    margin-left: auto;
+    text-align: right;
+    -webkit-border-radius: 8px 8px 0px 8px;
+    -moz-border-radius: 8px 8px 0px 8px;
+    -o-border-radius: 8px 8px 0px 8px;
+    -ms-border-radius: 8px 8px 0px 8px;
+    border-radius: 8px 8px 0px 8px;
+    background-color: #07D;
+    color: white;
+}
+
+.bubbledRight:before {
+    border-bottom: 9px solid #07D;
+    border-right: 9px solid rgba(0, 0, 0, 0);
+    position: absolute;
+    bottom: 0;
+    right: -8px;
+    content: "";
+}
+
+.commentArea>div:last-child{
+        margin-bottom: 120px;
+        color:white;
+    }
+
+.footer {
+    position: fixed;
+    height: 50px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+.bottomInupt {
+    position: static;
+    background-color: rgb(240,240,240);
+    border: none;
+    width: 100%;
+    height: 100%;
+}
+.send {
+    position: absolute;
+    right: 15px;
+    top: 10px;
+    width: 30px;
+    height: 30px;
+}
+
+
+</style>
+</head>
+<body>
+	<div id="list" class="commentArea">
+	    <div class="bubbledRight">
+	        我有一个问题
+	    </div>
+	    <div class="bubbledLeft">
+	        这是问题的回答
+	    </div>
+	   	<div class="bubbledRight">
+	        这是我第二个问题
+	    </div>
+	    <div class="bubbledLeft">
+	        没有找到答案,<a href="javascript:feedback();">人工反馈</a>
+	    </div>
+                <div class="bubbledRight">
+            我有一个问题
+        </div>
+        <div class="bubbledLeft">
+            这是问题的回答
+        </div>
+        <div class="bubbledRight">
+            这是我第二个问题
+        </div>
+        <div class="bubbledLeft">
+            没有找到答案,<a href="#">人工反馈</a>
+        </div>
+                <div class="bubbledRight">
+            我有一个问题
+        </div>
+        <div class="bubbledLeft">
+            这是问题的回答
+        </div>
+        <div class="bubbledRight">
+            这是我第二个问题
+        </div>
+        <div class="bubbledLeft">
+            没有找到答案,<a href="#">人工反馈</a>
+        </div>
+                <div class="bubbledRight">
+            我有一个问题
+        </div>
+        <div class="bubbledLeft">
+            这是问题的回答
+        </div>
+        <div class="bubbledRight">
+            这是我第二个问题
+        </div>
+        <div class="bubbledLeft">
+            没有找到答案,<a href="#">人工反馈</a>
+        </div>
+
+
+	</div> 
+
+	<footer class="footer" id="footer">
+        <input id="bottomInupt" class="bottomInupt" type="text" placeholder="输入反馈内容"/>
+        <input class="send" type="image" src="./send.png" onclick="javascript:send();"/>
+    </footer>
+
+</body>
+<script type="text/javascript">
+
+function feedback()
+{
+    var bridge = new Bridge()
+    bridge.post({"action":"ShowNavWeb","title":"反馈","url":"http://zhangxi.me/chinaso/qa/feedback.html"})
+}
+
+function send()
+{
+    $("#list").append('<div class="bubbledRight">'+$("#bottomInupt").val()+'</div>')
+
+
+$.ajax({
+  type: 'POST',
+  url: 'http://nfe.mgt.chinaso365.com/1/userFeedback',
+  data: "content=天气",
+    success: function(data){
+        alert(data)
+        },
+   error:
+        function(xhr,type){
+        console.log(xhr)
+        console.log(type)
+        $("#list").append('<div class="bubbledLeft">我是答案</div>')
+        }
+})
+
+}
+
+
+$("#bottomInupt").on('focus', function(event) {
+
+//$("#footer").css("position", "absolute");
+//$("#footer").css("top", "0px");
+//$("#footer").css("height", "200px");
+
+setTimeout(function(){ 
+    //$("body").scrollTop(0);
+    //document.body.scrollTop=document.body.scrollHeight+1000
+
+    //document.getElementById("bottomInupt").scrollIntoView();
+    //$("#bottomInupt").scrollIntoView(false);
+
+}, 600);
+//$("#inupt").css("visibility", "visible");
+//$("#bottomInupt").blur()
+});
+
+
+
+    $("#bottomInupt").keypress(function(e){ if(e.keyCode === 13) { 
+        send();
+    }})
+
+    localStorage.setItem("history2",JSON.stringify(["1","2","3","4"]))
+
+    var data = JSON.parse(localStorage.getItem("history2"));
+    console.log(data)
+
+
+    for(var item in data)
+    {
+        //'<div class="bubbledLeft">我是答案</div>'
+        //'<div class="bubbledRight">我是答案</div>'
+    }
+
+
+
+
+
+</script>
+</html>
