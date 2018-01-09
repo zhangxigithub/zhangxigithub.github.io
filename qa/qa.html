@@ -213,6 +213,7 @@ function clear()
 {
     $("#list").empty()
     localStorage.removeItem("history")
+    data = new Array()
 }
 
 
@@ -252,7 +253,7 @@ setTimeout(function(){
     //localStorage.setItem("history",JSON.stringify([a1,r1,a2,r2]))
 
     var data = JSON.parse(localStorage.getItem("history"));
-    if(data == null){ data = Array()}
+    if(data == null){ data = new Array()}
     
     console.log(data)
 
