@@ -289,13 +289,13 @@ setTimeout(function(){
     for(i in data)
     {
         console.log(data[i])
-        if(item.type == "q") //question
+        if(data[i].type == "q") //question
         {
-            appendQuestion(item.text)
+            appendQuestion(data[i].text)
         }
-        if(item.type == "r") //response
+        if(data[i].type == "r") //response
         {
-            appendResponse(item.text)
+            appendResponse(data[i].text)
         }
 
         //'<div class="bubbledLeft">我是答案</div>'
