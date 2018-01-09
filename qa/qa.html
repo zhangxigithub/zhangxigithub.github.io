@@ -198,17 +198,21 @@ function appendQuestion(text)
     $("#list").append('<div class="messageRight"><img src="./avatar.png" /><div class="bubbledRight">'+text+'</div></div> ')
     $("#bottomInupt").val("")
     window.scrollTo(0,document.body.scrollHeight);
+    data.append({type:"q" ,text:text})
+    localStorage.setItem("history",JSON.stringify(data))
 }
 function appendResponse(text)
 {
     $("#list").append('<div class="messageLeft"><img src="./avatar.png" /><div class="bubbledLeft">'+text+'</div></div> ')
     $("#clear").remove()
     $("#list").append('<div id="clear"><a href="javascript:clear();">- 清空 -</a></div> ')
+    data.append({type:"r" ,text:text})
+    localStorage.setItem("history",JSON.stringify(data))
 }
 function clear()
 {
     $("#list").empty()
-    localStorage.setItem("history","[]")
+    localStorage.removeItem("history")
 }
 
 
@@ -248,6 +252,8 @@ setTimeout(function(){
     //localStorage.setItem("history",JSON.stringify([a1,r1,a2,r2]))
 
     var data = JSON.parse(localStorage.getItem("history"));
+    if(data == null){ data = Array()}
+    
     console.log(data)
 
 
