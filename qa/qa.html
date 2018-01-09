@@ -163,7 +163,7 @@
 </body>
 <script type="text/javascript">
 
-var data = []
+var _data = []
 
 
 function feedback()
@@ -199,22 +199,22 @@ function appendQuestion(text)
     $("#list").append('<div class="messageRight"><img src="./avatar.png" /><div class="bubbledRight">'+text+'</div></div> ')
     $("#bottomInupt").val("")
     window.scrollTo(0,document.body.scrollHeight);
-    data.append({type:"q" ,text:text})
-    localStorage.setItem("history",JSON.stringify(data))
+    _data.append({type:"q" ,text:text})
+    localStorage.setItem("history",JSON.stringify(_data))
 }
 function appendResponse(text)
 {
     $("#list").append('<div class="messageLeft"><img src="./avatar.png" /><div class="bubbledLeft">'+text+'</div></div> ')
     $("#clear").remove()
     $("#list").append('<div id="clear"><a href="javascript:clear();">- 清空 -</a></div> ')
-    data.append({type:"r" ,text:text})
-    localStorage.setItem("history",JSON.stringify(data))
+    _data.append({type:"r" ,text:text})
+    localStorage.setItem("history",JSON.stringify(_data))
 }
 function clear()
 {
     $("#list").empty()
     localStorage.removeItem("history")
-    data = []
+    _data = []
 }
 
 
@@ -245,30 +245,30 @@ setTimeout(function(){
     }})
 
 
-    var a1 = {type:"q" ,text:"我是第1条问题"}
-    var a2 = {type:"q" ,text:"我是第2条问题"}
-    var r1 = {type:"r" ,text:"我是第1条回答"}
-    var r2 = {type:"r" ,text:"我是第2条回答"}
+    //var a1 = {type:"q" ,text:"我是第1条问题"}
+    //var a2 = {type:"q" ,text:"我是第2条问题"}
+    //var r1 = {type:"r" ,text:"我是第1条回答"}
+    //var r2 = {type:"r" ,text:"我是第2条回答"}
 
 
     //localStorage.setItem("history",JSON.stringify([a1,r1,a2,r2]))
 
-    data = JSON.parse(localStorage.getItem("history"));
-    if(data == null){ data = []}
+    _data = JSON.parse(localStorage.getItem("history"));
+    if(_data == null){ _data = []}
     
-    console.log(data)
+    console.log(_data)
 
 
-    for(i in data)
+    for(i in _data)
     {
-        console.log(data[i])
-        if(data[i].type == "q") //question
+        console.log(_data[i])
+        if(_data[i].type == "q") //question
         {
-            appendQuestion(data[i].text)
+            appendQuestion(_data[i].text)
         }
-        if(data[i].type == "r") //response
+        if(_data[i].type == "r") //response
         {
-            appendResponse(data[i].text)
+            appendResponse(_data[i].text)
         }
 
         //'<div class="bubbledLeft">我是答案</div>'
