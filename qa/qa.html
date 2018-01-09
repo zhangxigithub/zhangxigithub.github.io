@@ -168,6 +168,7 @@ function send()
 {
     $("#list").append('<div class="bubbledRight">'+$("#bottomInupt").val()+'</div>')
     $("#bottomInupt").val("")
+    window.scrollTo(0,document.body.scrollHeight);
     //$("list").last().scrollTop(-1000)
     //window.pageYOffset = -5000
 
@@ -194,7 +195,7 @@ $("#bottomInupt").on('focus', function(event) {
 //$("#footer").css("position", "absolute");
 //$("#footer").css("top", "0px");
 //$("#footer").css("height", "200px");
-
+window.scrollTo(0,document.body.scrollHeight);
 setTimeout(function(){ 
     //$("body").scrollTop(0);
     //document.body.scrollTop=document.body.scrollHeight+1000
