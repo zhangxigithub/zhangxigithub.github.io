@@ -25,7 +25,6 @@
     width: 100%;
     height: 100%;
     padding-left: 20px;
-    vertical-align: middle;
 }
 .send {
     position: absolute;
@@ -233,13 +232,14 @@ $("#bottomInupt").on('focus', function(event) {
 //$("#footer").css("height", "200px");
 window.scrollTo(0,document.body.scrollHeight);
 setTimeout(function(){ 
+    window.scrollTo(0,document.body.scrollHeight);
     //$("body").scrollTop(0);
     //document.body.scrollTop=document.body.scrollHeight+1000
 
     //document.getElementById("bottomInupt").scrollIntoView();
     //$("#bottomInupt").scrollIntoView(false);
 
-}, 600);
+}, 500);
 //$("#inupt").css("visibility", "visible");
 //$("#bottomInupt").blur()
 });
