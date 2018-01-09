@@ -199,6 +199,8 @@
 </body>
 <script type="text/javascript">
 
+
+
 function feedback()
 {
     var bridge = new Bridge()
@@ -220,7 +222,7 @@ $.ajax({
         function(xhr,type){
         console.log(xhr)
         console.log(type)
-        appendAnswer("我是一条回答")
+        appendResponse("我是一条回答")
         }
 })
 
@@ -233,7 +235,7 @@ function appendQuestion(text)
     $("#bottomInupt").val("")
     window.scrollTo(0,document.body.scrollHeight);
 }
-function appendAnswer(text)
+function appendResponse(text)
 {
     $("#list").append('<div class="messageLeft"><img src="./avatar.png" /><div class="bubbledLeft">'+text+'</div></div> ')
     $("#clear").remove()
@@ -271,14 +273,30 @@ setTimeout(function(){
         send();
     }})
 
-    localStorage.setItem("history2",JSON.stringify(["1","2","3","4"]))
 
-    var data = JSON.parse(localStorage.getItem("history2"));
+    var a1 = {type:"q" ,text:"我是第1条问题"}
+    var a2 = {type:"q" ,text:"我是第2条问题"}
+    var r1 = {type:"r" ,text:"我是第1条回答"}
+    var r1 = {type:"r" ,text:"我是第2条回答"}
+
+
+    localStorage.setItem("history",JSON.stringify([a1,a2,a3,a4]))
+
+    var data = JSON.parse(localStorage.getItem("history"));
     console.log(data)
 
 
     for(var item in data)
     {
+        if(item.type == "q") //question
+        {
+            appendQuestion(item.text)
+        }
+        if(item.type == "r") //response
+        {
+            appendResponse(item.text)
+        }
+
         //'<div class="bubbledLeft">我是答案</div>'
         //'<div class="bubbledRight">我是答案</div>'
     }
