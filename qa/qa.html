@@ -8,27 +8,7 @@
 <script src="./zepto.min.js"></script>
 <script src="./bridge.js"></script>
 <style type="text/css">
-.commentArea {
-    font: 15px Arial;
-    padding: 0 10px;
-    margin-top: 20px;    
-}
 
-.bubbledLeft,.bubbledRight {
-    padding: 5px 9px;
-    max-width: 50%;
-    clear: both;
-    position: relative;
-}
-
-
-
-
-
-.commentArea>div:last-child{
-        margin-bottom: 120px;
-        color:white;
-    }
 
 .footer {
     position: fixed;
@@ -54,13 +34,35 @@
     height: 26px;
 }
 
+
+
+.commentArea {
+    font: 15px Arial;
+    padding: 0 10px;
+    margin-top: 20px;    
+}
+
+.bubbledLeft,.bubbledRight {
+    padding: 5px 9px;
+    clear: both;
+    position: relative;
+}
+
+
+
+.commentArea>div:last-child{
+        margin-bottom: 120px;
+        color:white;
+    }
+
+
 .messageLeft {
     float: left;
     margin-left: auto;
     text-align: left;
     margin-top: 10px;
     padding: 5px 9px;
-    max-width: 100%;
+    max-width: 60%;
     clear: both;
     position: relative;
 }
@@ -99,7 +101,7 @@
     text-align: right;
     margin-top: 10px;
     padding: 5px 9px;
-    max-width: 100%;
+    max-width: 60%;
     clear: both;
     position: relative;
 }
@@ -141,6 +143,20 @@
             <img src="./avatar.png" />
             <div class="bubbledRight">
             我有一个问题
+            </div>
+        </div> 
+
+        <div class="messageLeft">
+            <img src="./avatar.png" />
+            <div class="bubbledLeft">
+            我是一个回答
+            </div>
+        </div>       
+
+        <div class="messageRight">
+            <img src="./avatar.png" />
+            <div class="bubbledRight">
+            我有一个问题我有一个问题
             </div>
         </div>
 
