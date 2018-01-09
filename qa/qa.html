@@ -22,48 +22,9 @@
     position: relative;
 }
 
-.bubbledLeft{
-    float: left;
-    margin-right: auto;
-    -webkit-border-radius: 8px 8px 8px 0px;
-    -moz-border-radius: 8px 8px 8px 0px;
-    -o-border-radius: 8px 8px 8px 0px;
-    -ms-border-radius: 8px 8px 8px 0px;
-    border-radius: 8px 8px 8px 0px;
-    background-color: #65B045;
-    color: #ffffff;
-}
 
-.bubbledLeft:before {
-    border-bottom: 10px solid #65B045;
-    border-left: 9px solid rgba(0, 0, 0, 0);
-    position: absolute;
-    bottom: 0;
-    left: -8px;
-    content: "";
-}
 
-.bubbledRight{
-    float: right;
-    margin-left: auto;
-    text-align: right;
-    -webkit-border-radius: 8px 8px 0px 8px;
-    -moz-border-radius: 8px 8px 0px 8px;
-    -o-border-radius: 8px 8px 0px 8px;
-    -ms-border-radius: 8px 8px 0px 8px;
-    border-radius: 8px 8px 0px 8px;
-    background-color: #07D;
-    color: white;
-}
 
-.bubbledRight:before {
-    border-bottom: 9px solid #07D;
-    border-right: 9px solid rgba(0, 0, 0, 0);
-    position: absolute;
-    bottom: 0;
-    right: -8px;
-    content: "";
-}
 
 .commentArea>div:last-child{
         margin-bottom: 120px;
@@ -93,58 +54,116 @@
     height: 30px;
 }
 
+.messageLeft {
+    float: left;
+    margin-left: auto;
+    text-align: left;
+    margin-top: 20px;
+    padding: 5px 9px;
+    max-width: 100%;
+    clear: both;
+    position: relative;
+}
+.messageLeft > img{
+    position: absolute;
+    left: 0px;
+    width: 50px;
+    height: 50px;
+    bottom: 8px;
+}
+.bubbledLeft{
+    left: 55px;
+    float: left;
+    margin-right: auto;
+    -webkit-border-radius: 8px 8px 8px 0px;
+    -moz-border-radius: 8px 8px 8px 0px;
+    -o-border-radius: 8px 8px 8px 0px;
+    -ms-border-radius: 8px 8px 8px 0px;
+    border-radius: 8px 8px 8px 0px;
+    background-color: #65B045;
+    color: #ffffff;
+}
+
+.bubbledLeft:before {
+    border-bottom: 10px solid #65B045;
+    border-left: 9px solid rgba(0, 0, 0, 0);
+    position: absolute;
+    bottom: 0;
+    left: -8px;
+    content: "";
+}
+
+.messageRight {
+    float: right;
+    margin-left: auto;
+    text-align: right;
+    margin-top: 20px;
+    padding: 5px 9px;
+    max-width: 100%;
+    clear: both;
+    position: relative;
+}
+.messageRight > img{
+    position: absolute;
+    right: 0px;
+    width: 50px;
+    height: 50px;
+    bottom: 8px;
+}
+.bubbledRight{
+    right: 55px;
+    float: right;
+    margin-left: auto;
+    text-align: right;
+    -webkit-border-radius: 8px 8px 0px 8px;
+    -moz-border-radius: 8px 8px 0px 8px;
+    -o-border-radius: 8px 8px 0px 8px;
+    -ms-border-radius: 8px 8px 0px 8px;
+    border-radius: 8px 8px 0px 8px;
+    background-color: #07D;
+    color: white;
+}
+
+.bubbledRight:before {
+    border-bottom: 9px solid #07D;
+    border-right: 9px solid rgba(0, 0, 0, 0);
+    position: absolute;
+    bottom: 0;
+    right: -8px;
+    content: "";
+}
 
 </style>
 </head>
 <body>
 	<div id="list" class="commentArea">
-	    <div class="bubbledRight">
-	        我有一个问题
-	    </div>
-	    <div class="bubbledLeft">
-	        这是问题的回答
-	    </div>
-	   	<div class="bubbledRight">
-	        这是我第二个问题
-	    </div>
-	    <div class="bubbledLeft">
-	        没有找到答案,<a href="javascript:feedback();">人工反馈</a>
-	    </div>
-                <div class="bubbledRight">
+        <div class="messageRight">
+            <img src="./avatar.png" />
+            <div class="bubbledRight">
             我有一个问题
+            </div>
         </div>
-        <div class="bubbledLeft">
-            这是问题的回答
+
+        <div class="messageLeft">
+            <img src="./avatar.png" />
+            <div class="bubbledLeft">
+            我是一个回答，我是一个回答，我是一个回答，我是一个回答，我是一个回答，我是一个回答,<a href="javascript:feedback();">人工反馈</a>
+            </div>
         </div>
-        <div class="bubbledRight">
-            这是我第二个问题
+
+
+        <div class="messageRight">
+            <img src="./avatar.png" />
+            <div class="bubbledRight">
+            我有一个问题,我有一个问题,我有一个问题,我有一个问题,我有一个问题,我有一个问题,我有一个问题,我有一个问题
+            </div>
         </div>
-        <div class="bubbledLeft">
-            没有找到答案,<a href="javascript:feedback();">人工反馈</a>
-        </div>
-                <div class="bubbledRight">
-            我有一个问题
-        </div>
-        <div class="bubbledLeft">
-            这是问题的回答
-        </div>
-        <div class="bubbledRight">
-            这是我第二个问题
-        </div>
-        <div class="bubbledLeft">
-            没有找到答案,<a href="javascript:feedback();">人工反馈</a>
-        </div>
-                <div class="bubbledRight">
-            我有一个问题
-        </div>
-        <div class="bubbledLeft">
-            这是问题的回答
-        </div>
-        <div class="bubbledRight">
-            这是我第二个问题
-        </div>
-        <div class="bubbledLeft">
-            没有找到答案,<a href="javascript:feedback();">人工反馈</a>
+
+        <div class="messageLeft">
+            <img src="./avatar.png" />
+            <div class="bubbledLeft">
+            我是一个回答，我是一个回答，我是一个回答，我是一个回答，我是一个回答，我是一个回答,<a href="javascript:feedback();">人工反馈</a>
+            </div>
         </div>
 
 
