@@ -183,6 +183,8 @@ function feedback()
 
 function send()
 {
+    if($("#bottomInupt").val() == "" ){return}
+
     appendQuestion($("#bottomInupt").val(),true)
 
 $.ajax({
