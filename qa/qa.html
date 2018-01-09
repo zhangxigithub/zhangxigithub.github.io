@@ -78,6 +78,7 @@
     bottom: 0;
 }
 .bottomInupt {
+    font: 18px Arial;
     position: static;
     background-color: rgb(240,240,240);
     border: none;
@@ -167,7 +168,8 @@ function send()
 {
     $("#list").append('<div class="bubbledRight">'+$("#bottomInupt").val()+'</div>')
     $("#bottomInupt").val("")
-
+    //$("list").last().scrollTop(-1000)
+    //window.pageYOffset = -5000
 
 $.ajax({
   type: 'POST',
