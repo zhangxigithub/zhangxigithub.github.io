@@ -165,6 +165,12 @@
 
 var _data = []
 
+function avatar()
+{
+    var reg = new RegExp("(^|&)" + avatar + "=([^&]*)(&|$)"); //构造一个含有目标参数的正则表达式对象
+    var r = window.location.search.substr(1).match(reg);  //匹配目标参数
+    if (r != null) return unescape(r[2]); return null; //返回参数值
+}
 
 function feedback()
 {
@@ -196,7 +202,12 @@ $.ajax({
 
 function appendQuestion(text,save)
 {
-    $("#list").append('<div class="messageRight"><img src="./avatar.png" /><div class="bubbledRight">'+text+'</div></div> ')
+
+    var a = "./avatar.png"
+    if avatar() != null {a = avatar()}
+
+
+    $("#list").append('<div class="messageRight"><img src="'+a+'" /><div class="bubbledRight">'+text+'</div></div> ')
     $("#bottomInupt").val("")
     window.scrollTo(0,document.body.scrollHeight);
     
