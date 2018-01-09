@@ -253,19 +253,11 @@ $("#bottomInupt").on('focus', function(event) {
 
 
 setTimeout(function(){ 
-    console.log(document.body.scrollHeight)
+    console.log(document.body.scrollHeight)//useful
     console.log(document.body.clientHeight)
     console.log(document.documentElement.scrollHeight)
-    //window.scrollTo(0,document.body.scrollHeight);
-    //document.getElementById("bottomInupt").scrollIntoViewIfNeeded();
-
-    //$("body").scrollTop(0);
-    //document.body.scrollTop=document.body.scrollHeight+1000
-
-    //document.getElementById("bottomInupt").scrollIntoView();
-    //$("#bottomInupt").scrollIntoView(false);
-
-}, 2000);
+    document.activeElement.scrollIntoViewIfNeeded();
+}, 500);
 //$("#inupt").css("visibility", "visible");
 //$("#bottomInupt").blur()
 });
