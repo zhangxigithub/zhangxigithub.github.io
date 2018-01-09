@@ -134,6 +134,11 @@
     right: -8px;
     content: "";
 }
+#clear{
+    clear: both;
+    position: relative;
+    text-align: center;
+}
 
 </style>
 </head>
@@ -185,6 +190,7 @@
 
 	</div> 
 
+
 	<footer class="footer" id="footer">
         <input id="bottomInupt" class="bottomInupt" type="text" placeholder="输入反馈内容"/>
         <input class="send" type="image" src="./send.png" onclick="javascript:send();"/>
@@ -230,8 +236,13 @@ function appendQuestion(text)
 function appendAnswer(text)
 {
     $("#list").append('<div class="messageLeft"><img src="./avatar.png" /><div class="bubbledLeft">'+text+'</div></div> ')
+    $("#clear").remove()
+    $("#list").append('<div id="clear"><a href="javascript:clear();">- 清空 -</a></div> ')
 }
-
+function clear()
+{
+    $("#list").empty()
+}
 
 
 
