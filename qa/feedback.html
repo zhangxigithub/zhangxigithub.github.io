@@ -337,12 +337,18 @@ body {
 }
 
 /*上传图片*/
-#uploadPic {
-    position:absolute;opacity: 0;left:0px;bottom:0px;width:150px;height:20px;z-index:9999;outline:none;
+.uploadPic {
+  background-color: red;
+  position:absolute;
+  opacity: 0;
+  width:100px;
+  height:100px;
+  z-index:9999;
+  outline:none;
 }
 
 #uploadSpan {
-    display: inline-block;color: #666;font-size: 14px;text-indent: 22px;
+    display: inline-block;color: #666;font-size: 14px;text-indent: 0px;
 }
 
 #lit {
@@ -358,6 +364,12 @@ body {
 .zx_uploadImage
 {
   display:inline-block;
+  margin-top: 10px;
+}
+.zx_uploadImage > img
+{
+  width  : 100px;
+  height : 100px;
 }
 
 </style>
@@ -368,7 +380,12 @@ body {
 
     <div id="mainContent">
         <!-- 提交附加信息（反馈内容，关键词等） -->
-        <div id="feedbackInfo" class="spreadWidth"><div class="infoItem spreadWidth"><div class="itemTitle spreadWidth"><span class="itemContent">详细说明</span></div><div class="textWrapper"><textarea placeholder="请详细描述您遇到的问题" class="itemTextArea spreadWidth itemObt" data-to="content" data-required="true"></textarea></div><span class="num">还可以输入<span id="numlimit">200</span>字</span></div></div>
+        <div id="feedbackInfo" class="spreadWidth"><div class="infoItem spreadWidth"><div class="itemTitle spreadWidth"><span class="itemContent">详细说明</span></div><div class="textWrapper"><textarea placeholder="请详细描述您遇到的问题" class="itemTextArea spreadWidth itemObt" data-to="content" data-required="true"></textarea></div>
+        <!--
+        <span class="num">还可以输入<span id="numlimit">200</span>字</span>
+      -->
+
+      </div></div>
         <!-- 多图上传 -->
         <div id="imgUpload">
            <!-- <div id = "imgscan" >
@@ -381,17 +398,23 @@ body {
            </div> -->
           <div id="imgscan">
             <div class="picItem" id="addImgBtn" style="position: relative">
+              <!--
               <input type="file" id="uploadPic" accept="image/*" class="upload-input" name="files[]">
               <img id="fileDisplayArea" class="onePic" src="./camera.png" style="width:18px; position: absolute; bottom:3px; left:0;">
+            -->
               <span id="uploadSpan">上传问题截图</span>
               <span id="lit">（图片请不要超过2M）</span>
             </div>
           </div>
           <div class="zx_uploadImage">
-            <img src="upload.png"/>
-            <img src="upload.png"/>
-            <img src="upload.png"/>
+            <input type="file" id="uploadPic1" accept="image/*" class="uploadPic" name="uploadPic1"/>
+            <img src="upload.png" id="preview1"/>
+            <input type="file" id="uploadPic2" accept="image/*" class="uploadPic" name="uploadPic2"/>
+            <img src="upload.png"  id="preview2"/>
+            <input type="file" id="uploadPic3" accept="image/*" class="uploadPic" name="uploadPic3"/>
+            <img src="upload.png"  id="preview3"/>
           </div>
+
         </div>
 
         <!-- 用户信息，联系方式 -->
@@ -405,36 +428,48 @@ body {
 </body>
 <script type="text/javascript">
 
-    var fileInput = document.getElementById('uploadPic');
-    var preview = document.getElementById('fileDisplayArea');
+    var upload1 = document.getElementById('uploadPic1');
+    var upload2 = document.getElementById('uploadPic2');
+    var upload3 = document.getElementById('uploadPic3');
 
-    fileInput.addEventListener('change', function(e) {
+    //1
+    upload1.addEventListener('change', function(e) {
 
-      var file = fileInput.files[0];
-      //var textType = /text.*/;
+      var file = upload1.files[0];
+      var reader = new FileReader();
 
-            console.log(file)
-
-
-      //if (file.type.match(textType)) {
-        var reader = new FileReader();
-
-        reader.onload = function(e) {
-          console.log(reader.result);
-          preview.src = reader.result;
-          //$("#fileDisplayArea").css("height", "100px");
-          //$("#fileDisplayArea").css("width", "100px");
+      reader.onload = function(e) {
+          document.getElementById('preview1').src = reader.result;
         }
+      reader.readAsDataURL(file);  
+    });
+    //2
+    upload2.addEventListener('change', function(e) {
 
-        reader.readAsDataURL(file);  
-      // } else {
-      //   fileDisplayArea.innerText = "File not supported!"
-      // }
+      var file = upload2.files[0];
+      var reader = new FileReader();
+
+      reader.onload = function(e) {
+          document.getElementById('preview2').src = reader.result;
+        }
+      reader.readAsDataURL(file);  
+    });
+    //3
+    upload3.addEventListener('change', function(e) {
+
+      var file = upload3.files[0];
+      var reader = new FileReader();
+
+      reader.onload = function(e) {
+          document.getElementById('preview3').src = reader.result;
+        }
+      reader.readAsDataURL(file);  
     });
 
 
     function send()
     {
+      console.log($("#uploadPic1").val())
       alert("should be sent.")
     }
 
