@@ -374,37 +374,62 @@ body {
                  <span id="lit" >（图片请不要超过2M）</span>
               </div>
            </div> -->
-        <div id="imgscan"><div class="picItem" id="addImgBtn" style="position: relative"><input type="file" id="uploadPic" accept="image/*" class="upload-input" name="files[]"><img class="onePic" src="./camera.png" style="width:18px; position: absolute; bottom:3px; left:0;"><span id="uploadSpan">上传问题截图</span><span id="lit">（图片请不要超过2M）</span></div></div></div>
+          <div id="imgscan">
+            <div class="picItem" id="addImgBtn" style="position: relative">
+              <input type="file" id="uploadPic" accept="image/*" class="upload-input" name="files[]">
+              <img id="fileDisplayArea" class="onePic" src="./camera.png" style="width:18px; position: absolute; bottom:3px; left:0;">
+              <span id="uploadSpan">上传问题截图</span>
+              <span id="lit">（图片请不要超过2M）</span>
+            </div>
+          </div>
+        </div>
 
         <!-- 用户信息，联系方式 -->
         <div id="contactInfo"><div class="infoItem spreadWidth"><div class="itemTitle spreadWidth"><span class="itemContent">联系方式</span><span class="itemContentAppend">(留下您的邮箱，以便将结果通知给您，我们会严格保密)</span></div><input placeholder="联系邮箱" class="itemInput spreadWidth itemObt" data-limit="email" data-to="email" data-required="false"></div></div>
 
-        <div id="submitbtn" class="itemBtn">提交反馈</div>
+        <div id="submitbtn" class="itemBtn" onclick="javascript:send()">提交反馈</div>
 
-
-        <!-- 各个弹出警告 -->
-         <div id="popSuccess" class="popLayer" style="display:none;">
-             <img src="/Public/img/success.png" style="width:100%;">
-         </div>
-         <div id="popError" class="popLayer" style="display:none">
-             <img src="/Public/img/error.png" style="width:100%;">
-         </div>
-         <div id="popEmailError" class="popLayer" style="display:none">
-             <img src="/Public/img/emailError.png" style="width:100%;">
-         </div>
-         <div id="popContentError" class="popLayer" style="display:none">
-             <img src="/Public/img/contentError.png" style="width:100%;">
-         </div>
-         <div id="popCountError" class="popLayer" style="display:none">
-             <img src="/Public/img/countError.png" style="width:100%;">
-         </div>
-         <div id="uploading" class="popLayer" style="display:none">
-             <img src="/Public/img/uploading.png" style="width:100%;">
-         </div>
 
 
 
 </body>
 <script type="text/javascript">
+
+    var fileInput = document.getElementById('uploadPic');
+    var preview = document.getElementById('fileDisplayArea');
+
+    fileInput.addEventListener('change', function(e) {
+
+      var file = fileInput.files[0];
+      //var textType = /text.*/;
+
+            console.log(file)
+
+
+      //if (file.type.match(textType)) {
+        var reader = new FileReader();
+
+        reader.onload = function(e) {
+          console.log(reader.result);
+          preview.src = reader.result;
+          //$("#fileDisplayArea").css("height", "100px");
+          //$("#fileDisplayArea").css("width", "100px");
+        }
+
+        reader.readAsDataURL(file);  
+      // } else {
+      //   fileDisplayArea.innerText = "File not supported!"
+      // }
+    });
+
+
+    function send()
+    {
+      alert("should be sent.")
+    }
+
+
+
+
 </script>
 </html>
