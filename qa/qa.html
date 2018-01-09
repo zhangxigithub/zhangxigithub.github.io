@@ -208,6 +208,7 @@ function appendResponse(text)
 function clear()
 {
     $("#list").empty()
+    localStorage.setItem("history",[])
 }
 
 
@@ -244,7 +245,7 @@ setTimeout(function(){
     var r2 = {type:"r" ,text:"我是第2条回答"}
 
 
-    localStorage.setItem("history",JSON.stringify([a1,r1,a2,r2]))
+    //localStorage.setItem("history",JSON.stringify([a1,r1,a2,r2]))
 
     var data = JSON.parse(localStorage.getItem("history"));
     console.log(data)
