@@ -254,7 +254,8 @@ $("#bottomInupt").on('focus', function(event) {
 
 setTimeout(function(){ 
     console.log(document.body.scrollHeight)
-    console.log(document.body.height)
+    console.log(document.body.clientHeight)
+    
     window.scrollTo(0,document.body.scrollHeight);
     //document.getElementById("bottomInupt").scrollIntoViewIfNeeded();
 
