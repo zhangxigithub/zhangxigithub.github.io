@@ -174,7 +174,7 @@ function feedback()
 
 function send()
 {
-    appendQuestion($("#bottomInupt").val())
+    appendQuestion($("#bottomInupt").val(),true)
 
 $.ajax({
   type: 'POST',
@@ -187,28 +187,35 @@ $.ajax({
         function(xhr,type){
         console.log(xhr)
         console.log(type)
-        appendResponse("我是一条回答")
+        appendResponse("我是一条回答",true)
         }
 })
 
 }
 
 
-function appendQuestion(text)
+function appendQuestion(text,save)
 {
     $("#list").append('<div class="messageRight"><img src="./avatar.png" /><div class="bubbledRight">'+text+'</div></div> ')
     $("#bottomInupt").val("")
     window.scrollTo(0,document.body.scrollHeight);
+    
+    if(save)
+    {
     _data.push({type:"q" ,text:text})
     localStorage.setItem("history",JSON.stringify(_data))
+    }
 }
-function appendResponse(text)
+function appendResponse(text,save)
 {
     $("#list").append('<div class="messageLeft"><img src="./avatar.png" /><div class="bubbledLeft">'+text+'</div></div> ')
     $("#clear").remove()
     $("#list").append('<div id="clear"><a href="javascript:clear();">- 清空 -</a></div> ')
+    if(save)
+    {
     _data.push({type:"r" ,text:text})
     localStorage.setItem("history",JSON.stringify(_data))
+    }
 }
 function clear()
 {
