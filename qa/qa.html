@@ -204,7 +204,7 @@ function appendQuestion(text,save)
 {
 
     var a = "./avatar.png"
-    if avatar() != null {a = avatar()}
+    if (avatar() != null ){a = avatar()}
 
 
     $("#list").append('<div class="messageRight"><img src="'+a+'" /><div class="bubbledRight">'+text+'</div></div> ')
