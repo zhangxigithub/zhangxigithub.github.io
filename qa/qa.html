@@ -163,7 +163,7 @@
 </body>
 <script type="text/javascript">
 
-data = new Array()
+data = []
 
 
 function feedback()
@@ -254,7 +254,7 @@ setTimeout(function(){
     //localStorage.setItem("history",JSON.stringify([a1,r1,a2,r2]))
 
     data = JSON.parse(localStorage.getItem("history"));
-    if(data == null){ data = new Array()}
+    if(data == null){ data = []}
     
     console.log(data)
 
