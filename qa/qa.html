@@ -199,7 +199,7 @@ function appendQuestion(text)
     $("#list").append('<div class="messageRight"><img src="./avatar.png" /><div class="bubbledRight">'+text+'</div></div> ')
     $("#bottomInupt").val("")
     window.scrollTo(0,document.body.scrollHeight);
-    _data.append({type:"q" ,text:text})
+    _data.push({type:"q" ,text:text})
     localStorage.setItem("history",JSON.stringify(_data))
 }
 function appendResponse(text)
@@ -207,7 +207,7 @@ function appendResponse(text)
     $("#list").append('<div class="messageLeft"><img src="./avatar.png" /><div class="bubbledLeft">'+text+'</div></div> ')
     $("#clear").remove()
     $("#list").append('<div id="clear"><a href="javascript:clear();">- 清空 -</a></div> ')
-    _data.append({type:"r" ,text:text})
+    _data.push({type:"r" ,text:text})
     localStorage.setItem("history",JSON.stringify(_data))
 }
 function clear()
