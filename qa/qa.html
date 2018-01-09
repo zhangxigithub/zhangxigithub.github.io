@@ -286,9 +286,9 @@ setTimeout(function(){
     console.log(data)
 
 
-    for(var item in data)
+    for(i in data)
     {
-        console.log(item)
+        console.log(item[i])
         if(item.type == "q") //question
         {
             appendQuestion(item.text)
