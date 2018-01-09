@@ -71,7 +71,7 @@
     left: 0px;
     width: 50px;
     height: 50px;
-    bottom: 8px;
+    bottom: 5px;
 }
 .bubbledLeft{
     left: 55px;
@@ -110,7 +110,7 @@
     right: 0px;
     width: 50px;
     height: 50px;
-    bottom: 8px;
+    bottom: 5px;
 }
 .bubbledRight{
     right: 55px;
@@ -201,11 +201,7 @@ function feedback()
 
 function send()
 {
-    $("#list").append('<div class="bubbledRight">'+$("#bottomInupt").val()+'</div>')
-    $("#bottomInupt").val("")
-    window.scrollTo(0,document.body.scrollHeight);
-    //$("list").last().scrollTop(-1000)
-    //window.pageYOffset = -5000
+    appendQuestion($("#bottomInupt").val())
 
 $.ajax({
   type: 'POST',
@@ -218,11 +214,25 @@ $.ajax({
         function(xhr,type){
         console.log(xhr)
         console.log(type)
-        $("#list").append('<div class="bubbledLeft">我是答案</div>')
+        appendAnswer("我是一条回答")
         }
 })
 
 }
+
+
+function appendQuestion(text)
+{
+    $("#list").append('<div class="messageRight"><img src="./avatar.png" /><div class="bubbledRight">'+text+'</div></div> ')
+    $("#bottomInupt").val("")
+    window.scrollTo(0,document.body.scrollHeight);
+}
+function appendAnswer(text)
+{
+    $("#list").append('<div class="messageLeft"><img src="./avatar.png" /><div class="bubbledLeft">'+text+'</div></div> ')
+}
+
+
 
 
 $("#bottomInupt").on('focus', function(event) {
