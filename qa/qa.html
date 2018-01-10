@@ -269,11 +269,15 @@ setTimeout(function(){
     window.scrollTo(0,document.body.scrollHeight);
 }, 500);
 
-//$("#inupt").css("visibility", "visible");
-//$("#bottomInupt").blur()
 });
 
+ window.setInterval(function () {
+    console.log("loop.....")
+    $("#footer").css("bottom", "0px");
+    //$("#footer").css("top", "0px");
+    //$("#footer").css("height", "200px");
 
+    }, 3000);
 
     $("#bottomInupt").keypress(function(e){ if(e.keyCode === 13) { 
         send();
