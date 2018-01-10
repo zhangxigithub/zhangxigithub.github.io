@@ -269,25 +269,8 @@ setTimeout(function(){
     window.scrollTo(0,document.body.scrollHeight);
     console.log("delay 500ms then move.")
 }, 500);
-
 });
 
- window.setInterval(function () {
-    console.log("loop3.....")
-
-
-    console.log(window.pageYOffset)
-    console.log(document.documentElement.scrollTop)
-    console.log(document.body.scrollTop)
-    console.log(document.body.scrollHeight)
-
-
-
-    $("#footer").css("bottom", "0px");
-    //$("#footer").css("top", "0px");
-    //$("#footer").css("height", "200px");
-
-    }, 3000);
 
     $("#bottomInupt").keypress(function(e){ if(e.keyCode === 13) { 
         send();
@@ -300,7 +283,6 @@ setTimeout(function(){
     //var r2 = {type:"r" ,text:"我是第2条回答"}
 
 
-    //localStorage.setItem("history",JSON.stringify([a1,r1,a2,r2]))
 
     _data = JSON.parse(localStorage.getItem("history"));
     if(_data == null){ _data = []}
