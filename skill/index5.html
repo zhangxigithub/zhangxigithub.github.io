@@ -1,0 +1,89 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Objective-C</title>
+
+    <script type="text/javascript" src="./js/raphael-min.js"></script>
+    <script type="text/javascript" src="./js/dracula_graffle.js"></script>
+    <script type="text/javascript" src="./js/jquery-1.4.2.min.js"></script>
+<script type="text/javascript" src="./js/dracula_graph.js"></script>
+    
+<style type="text/css">
+#canvas {
+	position:absolute;
+	width:90%;
+	height:90%;
+	z-index:1;
+}
+</style>
+<script type="text/javascript" >
+
+function ff()
+{
+var g = new Graph();
+
+
+g.addEdge("CAReplicatorLayer", "CALayer");
+g.addEdge("CATransformLayer", "CALayer");
+g.addEdge("CAScrollLayer", "CALayer");
+g.addEdge("CADisplayLink", "NSObject");
+g.addEdge("CAEmitterLayer", "CALayer");
+g.addEdge("CAMediaTimingFunction", "NSObject");
+g.addEdge("CAEmitterCell", "NSObject");
+g.addEdge("CAGradientLayer", "CALayer");
+g.addEdge("CALayer", "NSObject");
+g.addEdge("CAKeyframeAnimation", "CAPropertyAnimation");
+g.addEdge("CATiledLayer", "CALayer");
+g.addEdge("CATransaction", "NSObject");
+g.addEdge("CAShapeLayer", "CALayer");
+g.addEdge("CATextLayer", "CALayer");
+g.addEdge("CLRegion", "NSObject");
+g.addEdge("CLLocationManager", "NSObject");
+g.addEdge("CLPlacemark", "NSObject");
+g.addEdge("CLHeading", "NSObject");
+g.addEdge("CLLocation", "NSObject");
+g.addEdge("CLGeocoder", "NSObject");
+g.addEdge("CMAttitude", "NSObject");
+g.addEdge("CMLogItem", "NSObject");
+g.addEdge("CMMagnetometerData", "CMLogItem");
+g.addEdge("CMMotionManager", "NSObject");
+g.addEdge("CMAccelerometerData", "CMLogItem");
+g.addEdge("CMDeviceMotion", "CMLogItem");
+g.addEdge("CMGyroData", "CMLogItem");
+g.addEdge("EKAlarm", "EKObject");
+g.addEdge("EKEventStore", "NSObject");
+g.addEdge("EKRecurrenceEnd", "NSObject");
+g.addEdge("EKCalendar", "EKObject");
+g.addEdge("EKParticipant", "EKObject");
+g.addEdge("EKRecurrenceDayOfWeek", "NSObject");
+g.addEdge("EKEvent", "EKCalendarItem");
+g.addEdge("EKReminder", "EKCalendarItem");
+g.addEdge("EKRecurrenceRule", "EKObject");
+g.addEdge("EKSource", "EKObject");
+g.addEdge("EKStructuredLocation", "EKObject");
+g.addEdge("ACAccountCredential", "NSObject");
+g.addEdge("ACAccountType", "NSObject");
+g.addEdge("ACAccount", "NSObject");
+g.addEdge("ACAccountStore", "NSObject");
+g.addEdge("CTCall", "NSObject");
+g.addEdge("CTCallCenter", "NSObject");
+g.addEdge("CTCarrier", "NSObject");
+g.addEdge("CTTelephonyNetworkInfo", "NSObject");
+
+
+ 
+var layouter = new Graph.Layout.Spring(g);
+layouter.layout();
+ 
+var renderer = new Graph.Renderer.Raphael('canvas', g, 2000, 1300);
+renderer.draw();
+}
+</script>
+</head>
+
+<body onload="ff();">
+
+<div id="canvas"></div>
+</body>
+</html>

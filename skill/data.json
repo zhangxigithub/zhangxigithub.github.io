@@ -1,0 +1,572 @@
+{
+  "name": "张玺",
+  "children": [
+    {
+      "name": "iOS",
+      "children": [
+        {
+          "name": "通知",
+          "children": [
+            {
+              "name": "RemoteNotification",
+              "children": [
+                {
+                  "name": "SAE"
+                },
+                {
+                  "name": "php"
+                },
+                {
+                  "name": "生成证书",
+                  "link": "http://zxwiki.sinaapp.com/APNs"
+                },
+                {
+                  "name": "ZXRemoteNotification",
+                  "link": "https://gist.github.com/zhangxigithub/e4dd7d6736ab9f0d1f66"
+                }
+              ]
+            },
+            {
+              "name": "UILocalNotification",
+              "children": [
+              ]
+            }
+          ]
+        },
+        {
+          "name": "本地存储",
+          "children": [
+            {
+              "name": "Core Data"
+            },
+            {
+              "name": "SQLite",
+              "children": [
+                {
+                  "name": "FMDB"
+                }
+              ]
+            },
+            {
+              "name": "NSFileManager"
+            },
+            {
+              "name": "NSUserDefault"
+            },
+            {
+              "name": "NSArray,NSDictionary",
+              "children": [
+                {
+                  "name": "writeToFile - <NSCoding>"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "网络通信",
+          "children": [
+            {
+              "name": "XML解析",
+              "children": [
+                {
+                  "name": "NSXMLParser"
+                },
+                {
+                  "name": "libxml2"
+                }
+              ]
+            },
+            {
+              "name": "JSON解析",
+              "children": [
+                {
+                  "name": "NSJSONSerialization"
+                },
+                {
+                  "name": "JSONKit"
+                },
+                {
+                  "name": "TouchJSON"
+                },
+                {
+                  "name": "AutomaticCoder",
+                  "link": "https://github.com/zhangxigithub/AutomaticCoder"
+                }
+              ]
+            },
+            {
+              "name": "ASIHTTPRequest"
+            },
+            {
+              "name": "AFNetWorking",
+              "children": [
+                {
+                  "name": "text/html"
+                }
+              ]
+            },
+            {
+              "name": "NSURLConnection",
+              "children": [
+                {
+                  "name": "NSURLRequest",
+                  "children": [
+                    {
+                      "name": "超时"
+                    },
+                    {
+                      "name": "缓存策略"
+                    },
+                    {
+                      "name": "其他配置"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Socket",
+              "children": [
+                {
+                  "name": "GCDAsyncScoket"
+                },
+                {
+                  "name": "CocoaAsyncSocket"
+                }
+              ]
+            },
+            {
+              "name": "SDWebImage"
+            },
+            {
+              "name": "Reachibility"
+            },
+            {
+              "name": "XMPP",
+              "children": [
+                {
+                  "name": "XMPPFramework"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "App Store",
+          "children": [
+            {
+              "name": "提示评价",
+              "children": [
+                {
+                  "name": "ZXRate",
+                  "link": "https://github.com/zhangxigithub/ZXRate"
+                }
+              ]
+            },
+            {
+              "name": "评价"
+            },
+            {
+              "name": "Propo"
+            },
+            {
+              "name": "iConify"
+            },
+            {
+              "name": "iconutil -c icns <set filename>"
+            }
+          ]
+        },
+        {
+          "name": "URL Scheme",
+          "children": [
+            {
+              "name": "打电话"
+            },
+            {
+              "name": "发邮件"
+            },
+            {
+              "name": "发短信"
+            },
+            {
+              "name": "自定义"
+            }
+          ]
+        },
+        {
+          "name": "加密解密",
+          "children": [
+            {
+              "name": "Base64"
+            },
+            {
+              "name": "DES"
+            },
+            {
+              "name": "MD5"
+            },
+            {
+              "name": "AES"
+            },
+            {
+              "name": "Open SSL"
+            },
+            {
+              "name": "class",
+              "link": "https://github.com/zhangxigithub/ZXTools"
+            }
+          ]
+        },
+        {
+          "name": "ZXTools",
+          "link": "https://github.com/zhangxigithub/ZXTools"
+        },
+        {
+          "name": "Objective-C",
+          "children": [
+            {
+              "name": "垃圾回收"
+            },
+            {
+              "name": "ARC"
+            },
+            {
+              "name": "non ARC"
+            },
+            {
+              "name": "多线程",
+              "children": [
+                {
+                  "name": "NSThread"
+                },
+                {
+                  "name": "GCD",
+                  "children": [
+                    {
+                      "name": "线程同步"
+                    },
+                    {
+                      "name": "线程间通信"
+                    }
+                  ]
+                },
+                {
+                  "name": "NSOperation"
+                }
+              ]
+            },
+            {
+              "name": "动态特性"
+            },
+            {
+              "name": "Category"
+            },
+            {
+              "name": "Protocol"
+            },
+            {
+              "name": "KVO/KVC"
+            },
+            {
+              "name": "Notification"
+            },
+            {
+              "name": "delegate"
+            },
+            {
+              "name": "Block"
+            },
+            {
+              "name": "@Property",
+              "children": [
+                {
+                  "name": "strong"
+                },
+                {
+                  "name": "unsafe_unretain"
+                },
+                {
+                  "name": "string - copy"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Swift",
+          "children": [
+          {
+              "name": "morse code",
+              "link":"https://github.com/zhangxigithub/ZXMorse_Swift"
+          },
+          {
+              "name": "Extension"
+          },
+          {
+            "name":"copy",
+            "link":"https://gist.github.com/zhangxigithub/a93ec1ff4c69e65c3930"
+
+          }
+          ]
+          },
+        {
+          "name": "开发技巧",
+          "children": [
+            {
+              "name": "NSZombied"
+            },
+            {
+              "name": "release屏蔽log"
+            },
+            {
+              "name": "第三方Log"
+            },
+            {
+              "name": "友盟"
+            },
+            {
+              "name": "symbolicatecrash"
+            },
+            {
+              "name": "合理的宏定义",
+              "link": "https://github.com/zhangxigithub/ZXMacro"
+            }
+          ]
+        },
+        {
+          "name": "图像处理",
+          "children": [
+            {
+              "name": "OpenCV"
+            },
+            {
+              "name": "GPUImage"
+            }
+          ]
+        },
+        {
+          "name": "项目管理",
+          "children": [
+            {
+              "name": "GIT"
+            },
+            {
+              "name": "Scrum"
+            },
+            {
+              "name": "trello.com"
+            },
+            {
+              "name": "UML"
+            }
+          ]
+        },
+        {
+          "name": "Design Pattern",
+          "children": [
+            {
+              "name": "Singleton"
+            },
+            {
+              "name": "Factory Method"
+            },
+            {
+              "name": "Abstract Factory"
+            }
+          ]
+        },
+        {
+          "name": "MVC"
+        },
+        {
+          "name": "CocoaTouch",
+          "children": [
+            {
+              "name": "MapKit",
+              "children": [
+                {
+                  "name": "MKReverseGeocoder"
+                },
+                {
+                  "name": "<MKAnnotation>"
+                },
+                {
+                  "name": "MKOverlay"
+                }
+              ]
+            },
+            {
+              "name": "iAd"
+            },
+            {
+              "name": "UIKit",
+              "children": [
+                {
+                  "name": "UIResponder",
+                  "children": [
+                    {
+                      "name": "touch"
+                    },
+                    {
+                      "name": "motion"
+                    },
+                    {
+                      "name": "remoteControl"
+                    }
+                  ]
+                },
+                {
+                  "name": "UIdevice"
+                },
+                {
+                  "name": "其他控件"
+                }
+              ]
+            },
+            {
+              "name": "Address Book UI"
+            },
+            {
+              "name": "Event Kit UI"
+            },
+            {
+              "name": "Game Kit"
+            }
+          ]
+        },
+        {
+          "name": "Core Services",
+          "children": [
+            {
+              "name": "Core Location"
+            },
+            {
+              "name": "Core Data"
+            },
+            {
+              "name": "Event Kit"
+            }
+          ]
+        },
+        {
+          "name": "Media Layer",
+          "children": [
+            {
+              "name": "OpenGL ES"
+            },
+            {
+              "name": "Core Graphics"
+            },
+            {
+              "name": "Quartz Core",
+              "children": [
+                {
+                  "name": "Core Animation"
+                },
+                {
+                  "name": "CALayer"
+                }
+              ]
+            },
+            {
+              "name": "AVFoundation"
+            },
+            {
+              "name": "Audio Toolbox"
+            },
+            {
+              "name": "AssetsLibrary"
+            },
+            {
+              "name": "Core Text",
+              "children": [
+                {
+                  "name": "RTLabel"
+                },
+                {
+                  "name": "DTCoreText"
+                }
+              ]
+            },
+            {
+              "name": "OpenCV"
+            },
+            {
+              "name": "GPUImage"
+            }
+          ]
+        },
+        {
+          "name": "Vendors",
+          "children": [
+            {
+              "name": "MBProgressHUD"
+            },
+            {
+              "name": "three20"
+            },
+            {
+              "name": "EGOTableViewPullRefresh"
+            },
+            {
+              "name": "SDWebImage"
+            },
+            {
+              "name": "MagicalRecord"
+            },
+            {
+              "name": "iCarousel"
+            },
+            {
+              "name": "Zbar"
+            },
+            {
+              "name": "MTStatusBarOVerlay"
+            },
+            {
+              "name": "MKStoreKit"
+            },
+            {
+              "name": "nib2objc"
+            },
+            {
+              "name": "ibtool"
+            },
+            {
+              "name": "ZXTools"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Server",
+      "children":[
+      {
+        "name":"Node.js",
+        "children":[
+        {
+          "name": "Express"
+        },
+        {
+          "name": "HEXO"
+        },
+        {
+          "name": "database",
+          "children":[
+          {
+            "name":"SQLite"
+          }
+          ]
+        }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Mac OS"
+  }
+  ]
+}

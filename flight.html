@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+	<style type="text/css">
+		body, html {width: 100%;height: 100%;margin:0;font-family:"微软雅黑";}
+		#allmap{
+			width:100%;
+			height:100%;
+		}
+		p{margin-left:5px; font-size:14px;}
+	</style>
+	<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=UnluNOigkzsKaQCDCYbjx5BbQ0caAcmp"></script>
+	<script src="./javascripts/zepto.min.js"></script>
+	<!-- <script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script> -->
+	<meta name="keywords" content="flight"/>
+	<title>Flights</title>
+</head>
+<body>
+	<h3>北京出发到全国的特价机票，部分坐标可能不太准，数据来自去哪儿。</h3>
+	<div id="allmap"></div>
+</body>
+</html>
+<script type="text/javascript">
+
+//http://lbsyun.baidu.com
+//http://api.map.baidu.com/lbsapi/getpoint/index.html
+
+	map = new BMap.Map("allmap");
+	map.centerAndZoom(new BMap.Point(116.417854,39.921988), 6);
+	map.enableScrollWheelZoom(true);
+	addMapControl();
+	
+
+
+
+	var citys = new Array();
+
+	var myGeo = new BMap.Geocoder();
+
+
+
+	function getFlightsList()
+	{
+
+	$.ajax({
+		type: 'GET',
+  		url: 'http://lp.flight.qunar.com/api/qdclowprice?callback=getFlights&dcity=%E5%8C%97%E4%BA%AC&acity=&fromCode=&toCode=&ddate=2016-09-01&drange=7&query=filter&sort=S1&asc=true&page=1&from=tejia_d_ct&ex_track=&searchType=domestic&per=400&perScrollPage=1',
+  // type of data we are expecting in return:
+  		dataType: 'jsonp',
+  		jsonpCallback:'getFlights',
+  		timeout: 2000,
+  		success: function(data){
+
+	f = Array();
+	f = data.data.list
+
+	for (var i = data.data.list.length - 1; i >= 0; i--) {
+		
+		bdGEO();
+
+	function bdGEO(){
+
+		geocodeSearch(f[i]);
+	}
+
+	function geocodeSearch(city){
+
+		myGeo.getPoint(city.ac, function(point){
+
+			if (point) {
+
+				var repeat = false;
+				for (var i = citys.length - 1; i >= 0; i--) {
+					
+					if(citys[i].ac == city.ac)
+					{
+						if(parseInt(citys[i].pr) < parseInt(city.pr))
+						{
+							repeat = true
+						}else{
+							//console.log(citys[i])
+							//console.log(city)
+						}
+					}
+				};
+
+				if(repeat)
+				{
+					return
+				}
+				citys.push(city)
+
+				var address = new BMap.Point(point.lng, point.lat);
+
+				var marker = new BMap.Marker(address);
+				map.addOverlay(marker);
+
+				var label = new BMap.Label(city.ac+" ¥"+city.pr+" ("+city.dd+")",{offset:new BMap.Size(20,-10)})
+				marker.setLabel(label);
+
+				//marker.addEventListener("click",attribute);
+				//addClickHandler(t,content,marker);
+
+			}
+		},"中国");
+	}
+
+
+};
+
+  },
+  error: function(xhr, type){
+    //alert('Ajax error!')
+    getFlightsList()
+  }
+})
+	
+	}
+
+	getFlightsList()
+
+
+	function openInfo(t,content,e){
+		var nopts = {
+				width : 250,     // 信息窗口宽度
+				height: 80,     // 信息窗口高度
+				title : "", // 信息窗口标题
+				enableMessage:true//设置允许信息窗发送短息
+			   };
+		var p = e.target;
+		var point = new BMap.Point(p.getPosition().lng, p.getPosition().lat);
+		var infoWindow = new BMap.InfoWindow(content,nopts);  // 创建信息窗口对象 
+		map.openInfoWindow(infoWindow,point); //开启信息窗口
+	}
+	function addMapControl(){
+      var scaleControl = new BMap.ScaleControl({anchor:BMAP_ANCHOR_BOTTOM_LEFT});
+      scaleControl.setUnit(BMAP_UNIT_IMPERIAL);
+      map.addControl(scaleControl);
+      var navControl = new BMap.NavigationControl({anchor:BMAP_ANCHOR_TOP_LEFT,type:BMAP_NAVIGATION_CONTROL_LARGE});
+      map.addControl(navControl);
+      var overviewControl = new BMap.OverviewMapControl({anchor:BMAP_ANCHOR_BOTTOM_RIGHT,isOpen:true});
+      map.addControl(overviewControl);
+    }
+</script>
+

@@ -1,0 +1,105 @@
+h1, h2, h3, h4, h5, h6 { line-height: 1; }
+h1 { font-size: 2.4rem; margin: 0 0 0.7rem; font-weight: 800; text-align: left; }
+h2 { font-size: 3.3rem; margin: 1rem 0; font-weight: 800; text-align: center; }
+h3 { font-size: 2.4rem; margin: 0 0 0.7rem; font-weight: 700; line-height: 3rem; }
+
+h4 { color: #ee6363; font-size: 1.6rem; font-weight: 800; margin: 0 auto 3rem; max-width: 1500px; overflow: hidden; text-align: center; }
+h4 span { display: inline-block; padding: 10px 20px; position: relative; letter-spacing: .1em; }
+h4 span:before { content: ''; display: block; position: absolute; top: 50%; left: -640px; margin-top: -5px; width: 600px; height: 10px; background: #ee6363; }
+h4 span:after { content: ''; display: block; position: absolute; top: 50%;right: -640px; margin-top: -5px; width: 600px; height: 10px; background: #ee6363; }
+h4.yellow { color: #fdbf45; }
+h4.yellow span:before, #content h4.yellow span:after { background: #fdbf45; }
+h4.purple { color: #855f7f; }
+h4.purple span:before, #content h4.purple span:after { background: #855f7f; }
+
+p { line-height: 140%; margin-bottom: 2rem; }
+.grey p { color: #2c3133; }
+li p, li a { font-weight: 600; }
+
+.badge-content p { color: #fff; font-size: 1.3rem; line-height: 1.6; margin: 0; padding-top: 1em; border-top: 5px solid #fff; text-align: center; }
+
+#welcome h1 { color: #2c3133; }
+#welcome .badge-content p { border-top: 0; color: #000; padding-top: 0; text-align: left; }
+
+.leader { font-size: 1.4rem; font-weight: 700; text-indent: 100px; box-sizing: border-box; }
+.leader.aligncenter { text-indent: 0; }
+.purple .leader { color: #fff; }
+
+.label { color: #fdbf45; font-weight: 700; margin: 70px 0; }
+
+.button { display: inline-block; font-weight: 800; font-size: 34px; line-height: 34px; background: #14ada4; border-radius: 100px; text-align: center; cursor: pointer; color: #FFF; padding: 1.8rem 4rem; text-transform: lowercase; font-family: 'nexa', sans-serif; margin-top: 10px; -webkit-appearance: none; text-decoration: none; border-top: 3px solid rgba(255,255,255,0.5); border-left: 1px solid rgba(255,255,255,0.5); border-right: 1px solid rgba(255,255,255,0.5); }
+.button.button-large { padding: 1.8rem 6rem; }
+.button.button-yellow { background: #f0b034; }
+
+.sales-block.blue h2 { color: #0da7c6; }
+.sales-block.orange h2 { color: #f68d1e; }
+.sales-block.red h2 { color: #ee6363; }
+.sales-block.blue p { border-left: 10px solid #0da7c6; }
+.sales-block.orange p { border-left: 10px solid #f68d1e; }
+.sales-block.red p { border-left: 10px solid #ee6363; }
+
+.legal-info  ol { list-style: decimal; margin-left: 20px; line-height: 180%; }
+.legal-info .ol-space li { margin-bottom: 15px; }
+.legal-info  ol li li { margin-left: 40px; }
+.legal-info h1 { text-align: center; margin-bottom: 2rem; }
+.legal-info h4 { color: #d44a73; text-align: left; font-size: 1rem; margin: 0 0 1rem 0; }
+
+.testimonial .leader { text-indent: 0; color: #fff; margin-bottom: 0; padding-left: 4rem; }
+
+@media only screen and (max-width: 101.87em) {
+	h1 { font-size: 2rem; }
+	h4 { width: auto; margin: 0 4rem 3rem 4rem; }
+
+	#welcome .badge-content p { font-size: 1rem; }
+}
+
+@media only screen and (max-width: 90em) {
+	h4 { font-size: 1.4rem; }
+
+	.button, #footer .button { padding: 1rem 4rem; font-size: 1.4rem; }
+	.button.button-large { padding: 1.2rem 5rem; font-size: 1.4rem; }
+
+	.legal-info h4 { margin: 0 0 30px 0; }
+}
+
+@media only screen and (max-width: 85em) {
+	h3 { font-size: 2rem; line-height: 2.4rem; }
+	p { font-size: 1rem; }
+}
+
+@media only screen and (max-width: 75em) {
+	.button, #footer .button { padding: 1.2rem 4rem; font-size: 1.2rem; }
+}
+
+@media only screen and (max-width: 60em) {
+	h3 { margin: 0 0 1rem 0; text-align: center; }
+	h4 { margin: 0 15px 1.5rem 15px; font-size: 1.3rem; }
+	h4 span { padding: 10px 10px; }
+	h4 span::before { left: -610px; height: 6px; margin-top: -3px; }
+	h4 span::after { right: -610px; height: 6px; margin-top: -3px; }
+
+	.testimonial .leader { padding-left: 0; text-align: center; }
+	.test-text { text-align: center; margin-bottom: 3rem; }
+	.test-text .button { margin-top: 0; }
+
+	.label { margin: 30px 0; }
+
+	.press-releases li { margin-bottom: 40px; }
+}
+
+@media only screen and (max-width: 50em) {
+	.leader { text-indent: 30px; }
+}
+
+@media only screen and (max-width: 46.25em) {
+	h1, #welcome .badge-content p { text-align: center; }
+	h2.alignleft { text-align: center; }
+
+	.leader { font-size: 1.2rem; }
+
+	.button, #footer .button, .assets .button { padding: 15px 50px; }
+
+	.press-releases li { float: none; padding: 0 !important; width: 100%; }
+
+
+}

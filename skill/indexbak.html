@@ -1,0 +1,645 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Objective-C</title>
+
+<script type="text/javascript" src="http://www.gojs.net/latest/release/go.js"></script>
+<script type="text/javascript" src="http://www.gojs.net/latest/samples/goSamples.js"></script>
+<script type="text/javascript" id="code">
+
+ function init() {
+
+    var $ = go.GraphObject.make;  // for conciseness in defining templates
+    var diagram = $(go.Diagram, "myDiagram");  // 
+
+
+    // Define a node template showing class names.
+    // Double-clicking opens up the documentation for that class.
+    diagram.nodeTemplate =
+      $(go.Node, go.Panel.Auto,
+        { doubleClick: nodeDoubleClick },  // this function is defined below
+        { toolTip:
+            $(go.Adornment,
+              $(go.Panel, go.Panel.Auto,
+                $(go.Shape, { fill: "lightyellow" }),
+                $(go.TextBlock, "double-click\nfor documentation",
+                  { margin: 5 }))) },
+        $(go.Shape, { fill: "darkslategray", stroke: null }),
+        $(go.TextBlock,
+          { font: "bold 13px Helvetica, bold Arial, sans-serif",
+            stroke: "white", margin: 3 },
+          new go.Binding("text", "key")));
+
+
+var nodeDataArray = [];
+
+    // Define a trivial link template with no arrowhead
+    diagram.linkTemplate =
+      $(go.Link,  // the whole link panel
+        { selectable: false },
+        $(go.Shape));  // the link shape, with the default black stroke
+
+
+	
+nodeDataArray.push({ key: 'NSObject' });
+nodeDataArray.push({ key: 'MIDINetworkSession', parent: 'NSObject' });
+nodeDataArray.push({ key: 'MIDINetworkConnection', parent: 'NSObject' });
+nodeDataArray.push({ key: 'MIDINetworkHost', parent: 'NSObject' });
+nodeDataArray.push({ key: 'CIContext', parent: 'NSObject' });
+nodeDataArray.push({ key: 'CIFeature', parent: 'NSObject}' });
+nodeDataArray.push({ key: 'CIColor', parent: 'NSObject' });
+nodeDataArray.push({ key: 'CIDetector', parent: 'NSObject}' });
+nodeDataArray.push({ key: 'CIFilter', parent: 'NSObject' });
+nodeDataArray.push({ key: 'CIFaceFeature', parent: 'CIFeature}' });
+nodeDataArray.push({ key: 'CIImage', parent: 'NSObject' });
+nodeDataArray.push({ key: 'CIVector', parent: 'NSObject' });
+nodeDataArray.push({ key: 'EKEventEditViewController', parent: 'UINavigationController' });
+nodeDataArray.push({ key: 'EKEventViewController', parent: 'UIViewController' });
+nodeDataArray.push({ key: 'EKCalendarChooser', parent: 'UIViewController' });
+nodeDataArray.push({ key: 'MKPolyline', parent: 'MKMultiPoint' });
+nodeDataArray.push({ key: 'MKAnnotationView', parent: 'UIView' });
+nodeDataArray.push({ key: 'MKPointAnnotation', parent: 'MKShape' });
+nodeDataArray.push({ key: 'MKCircle', parent: 'MKShape' });
+nodeDataArray.push({ key: 'MKDirectionsRequest', parent: 'NSObject' });
+nodeDataArray.push({ key: 'MKReverseGeocoder', parent: 'NSObject' });
+nodeDataArray.push({ key: 'MKUserTrackingBarButtonItem', parent: 'UIBarButtonItem' });
+nodeDataArray.push({ key: 'MKOverlayPathView', parent: 'MKOverlayView' });
+nodeDataArray.push({ key: 'MKPolylineView', parent: 'MKOverlayPathView' });
+nodeDataArray.push({ key: 'MKPolygon', parent: 'MKMultiPoint' });
+nodeDataArray.push({ key: 'MKPlacemark', parent: 'CLPlacemark' });
+nodeDataArray.push({ key: 'MKCircleView', parent: 'MKOverlayPathView' });
+nodeDataArray.push({ key: 'MKLocalSearchRequest', parent: 'NSObject' });
+nodeDataArray.push({ key: 'MKLocalSearch', parent: 'NSObject' });
+nodeDataArray.push({ key: 'MKPinAnnotationView', parent: 'MKAnnotationView' });
+nodeDataArray.push({ key: 'MKPolygonView', parent: 'MKOverlayPathView' });
+nodeDataArray.push({ key: 'MKLocalSearchResponse', parent: 'NSObject' });
+nodeDataArray.push({ key: 'MKMultiPoint', parent: 'MKShape' });
+nodeDataArray.push({ key: 'MKMapView', parent: 'UIView' });
+nodeDataArray.push({ key: 'MKOverlayView', parent: 'UIView' });
+nodeDataArray.push({ key: 'MKShape', parent: 'NSObject' });
+nodeDataArray.push({ key: 'MKUserLocation', parent: 'NSObject' });
+nodeDataArray.push({ key: 'MKMapItem', parent: 'NSObject' });
+nodeDataArray.push({ key: 'MPMediaItem', parent: 'MPMediaEntity' });
+nodeDataArray.push({ key: 'MPTimedMetadata', parent: 'NSObject' });
+nodeDataArray.push({ key: 'MPMovieAccessLog', parent: 'NSObject' });
+nodeDataArray.push({ key: 'MPMediaEntity', parent: 'NSObject' });
+nodeDataArray.push({ key: 'MPMediaPropertyPredicate', parent: 'MPMediaPredicate' });
+nodeDataArray.push({ key: 'MPMovieErrorLogEvent', parent: 'NSObject' });
+nodeDataArray.push({ key: 'MPVolumeView', parent: 'UIView' });
+nodeDataArray.push({ key: 'MPMediaPredicate', parent: 'NSObject' });
+nodeDataArray.push({ key: 'MPMediaPickerController', parent: 'UIViewController' });
+nodeDataArray.push({ key: 'MPMediaQuerySection', parent: 'NSObject' });
+nodeDataArray.push({ key: 'MPMediaItemCollection', parent: 'MPMediaEntity' });
+nodeDataArray.push({ key: 'MPMovieErrorLog', parent: 'NSObject' });
+nodeDataArray.push({ key: 'MPMoviePlayerViewController', parent: 'UIViewController' });
+nodeDataArray.push({ key: 'MPMediaLibrary', parent: 'NSObject' });
+nodeDataArray.push({ key: 'MPMoviePlayerController', parent: 'NSObject' });
+nodeDataArray.push({ key: 'MPMediaQuery', parent: 'NSObject' });
+nodeDataArray.push({ key: 'MPNowPlayingInfoCenter', parent: 'NSObject' });
+nodeDataArray.push({ key: 'MPMediaItemArtwork', parent: 'NSObject' });
+nodeDataArray.push({ key: 'MPMusicPlayerController', parent: 'NSObject' });
+nodeDataArray.push({ key: 'MPMovieAccessLogEvent', parent: 'NSObject' });
+nodeDataArray.push({ key: 'MPMediaPlaylist', parent: 'MPMediaItemCollection' });
+nodeDataArray.push({ key: 'CAAnimation', parent: 'NSObject' });
+nodeDataArray.push({ key: 'CATransition', parent: 'CAAnimation' });
+nodeDataArray.push({ key: 'CAAnimationGroup', parent: 'CAAnimation' });
+nodeDataArray.push({ key: 'CAEAGLLayer', parent: 'CALayer' });
+nodeDataArray.push({ key: 'CABasicAnimation', parent: 'CAPropertyAnimation' });
+nodeDataArray.push({ key: 'CAPropertyAnimation', parent: 'CAAnimation' });
+nodeDataArray.push({ key: 'CAValueFunction', parent: 'NSObject' });
+nodeDataArray.push({ key: 'CAReplicatorLayer', parent: 'CALayer' });
+nodeDataArray.push({ key: 'CATransformLayer', parent: 'CALayer' });
+nodeDataArray.push({ key: 'CAScrollLayer', parent: 'CALayer' });
+nodeDataArray.push({ key: 'CADisplayLink', parent: 'NSObject' });
+nodeDataArray.push({ key: 'CAEmitterLayer', parent: 'CALayer' });
+nodeDataArray.push({ key: 'CAMediaTimingFunction', parent: 'NSObject' });
+nodeDataArray.push({ key: 'CAEmitterCell', parent: 'NSObject' });
+nodeDataArray.push({ key: 'CAGradientLayer', parent: 'CALayer' });
+nodeDataArray.push({ key: 'CALayer', parent: 'NSObject' });
+nodeDataArray.push({ key: 'CAKeyframeAnimation', parent: 'CAPropertyAnimation' });
+nodeDataArray.push({ key: 'CATiledLayer', parent: 'CALayer' });
+nodeDataArray.push({ key: 'CATransaction', parent: 'NSObject' });
+nodeDataArray.push({ key: 'CAShapeLayer', parent: 'CALayer' });
+nodeDataArray.push({ key: 'CATextLayer', parent: 'CALayer' });
+nodeDataArray.push({ key: 'CLRegion', parent: 'NSObject' });
+nodeDataArray.push({ key: 'CLLocationManager', parent: 'NSObject' });
+nodeDataArray.push({ key: 'CLPlacemark', parent: 'NSObject' });
+nodeDataArray.push({ key: 'CLHeading', parent: 'NSObject' });
+nodeDataArray.push({ key: 'CLLocation', parent: 'NSObject' });
+nodeDataArray.push({ key: 'CLGeocoder', parent: 'NSObject' });
+nodeDataArray.push({ key: 'CMAttitude', parent: 'NSObject' });
+nodeDataArray.push({ key: 'CMLogItem', parent: 'NSObject' });
+nodeDataArray.push({ key: 'CMMagnetometerData', parent: 'CMLogItem' });
+nodeDataArray.push({ key: 'CMMotionManager', parent: 'NSObject' });
+nodeDataArray.push({ key: 'CMAccelerometerData', parent: 'CMLogItem' });
+nodeDataArray.push({ key: 'CMDeviceMotion', parent: 'CMLogItem' });
+nodeDataArray.push({ key: 'CMGyroData', parent: 'CMLogItem' });
+nodeDataArray.push({ key: 'TWTweetComposeViewController', parent: 'UIViewController' });
+nodeDataArray.push({ key: 'TWRequest', parent: 'NSObject' });
+nodeDataArray.push({ key: 'PKPass', parent: 'NSObject' });
+nodeDataArray.push({ key: 'PKAddPassesViewController', parent: 'UIViewController' });
+nodeDataArray.push({ key: 'PKPassLibrary', parent: 'NSObject' });
+nodeDataArray.push({ key: 'EAGLSharegroup', parent: 'NSObject' });
+nodeDataArray.push({ key: 'EAGLContext', parent: 'NSObject' });
+nodeDataArray.push({ key: 'ASIdentifierManager', parent: 'NSObject' });
+nodeDataArray.push({ key: 'EASession', parent: 'NSObject' });
+nodeDataArray.push({ key: 'EAAccessory', parent: 'NSObject' });
+nodeDataArray.push({ key: 'EAAccessoryManager', parent: 'NSObject' });
+nodeDataArray.push({ key: 'NSMetadataQuery', parent: 'NSObject' });
+nodeDataArray.push({ key: 'NSLocale', parent: 'NSObject' });
+nodeDataArray.push({ key: 'NSConstantString', parent: 'NSSimpleCString' });
+nodeDataArray.push({ key: 'NSURLCredential', parent: 'NSObject' });
+nodeDataArray.push({ key: 'NSNull', parent: 'NSObject' });
+nodeDataArray.push({ key: 'NSMethodSignature', parent: 'NSObject' });
+nodeDataArray.push({ key: 'NSAutoreleasePool', parent: 'NSObject' });
+nodeDataArray.push({ key: 'NSMutableOrderedSet', parent: 'NSOrderedSet' });
+nodeDataArray.push({ key: 'NSMutableArray', parent: 'NSArray' });
+nodeDataArray.push({ key: 'NSURLRequest', parent: 'NSObject' });
+nodeDataArray.push({ key: 'NSDecimalNumberHandler', parent: 'NSObject' });
+nodeDataArray.push({ key: 'NSURL', parent: 'NSObject' });
+nodeDataArray.push({ key: 'NSDateFormatter', parent: 'NSFormatter' });
+nodeDataArray.push({ key: 'NSCharacterSet', parent: 'NSObject' });
+nodeDataArray.push({ key: 'NSRunLoop', parent: 'NSObject' });
+nodeDataArray.push({ key: 'NSDictionary', parent: 'NSObject' });
+nodeDataArray.push({ key: 'NSMetadataItem', parent: 'NSObject' });
+nodeDataArray.push({ key: 'NSPointerFunctions', parent: 'NSObject' });
+nodeDataArray.push({ key: 'NSMapTable', parent: 'NSObject' });
+nodeDataArray.push({ key: 'NSNetService', parent: 'NSObject' });
+nodeDataArray.push({ key: 'NSInputStream', parent: 'NSStream' });
+nodeDataArray.push({ key: 'NSMutableCharacterSet', parent: 'NSCharacterSet' });
+nodeDataArray.push({ key: 'NSCachedURLResponse', parent: 'NSObject' });
+nodeDataArray.push({ key: 'NSException', parent: 'NSObject' });
+nodeDataArray.push({ key: 'NSKeyedArchiver', parent: 'NSCoder' });
+nodeDataArray.push({ key: 'NSScanner', parent: 'NSObject' });
+nodeDataArray.push({ key: 'NSMutableString', parent: 'NSString' });
+nodeDataArray.push({ key: 'NSMetadataQueryAttributeValueTuple', parent: 'NSObject' });
+nodeDataArray.push({ key: 'NSFileSecurity', parent: 'NSObject' });
+nodeDataArray.push({ key: 'NSMutableDictionary', parent: 'NSDictionary' });
+nodeDataArray.push({ key: 'NSBundle', parent: 'NSObject' });
+nodeDataArray.push({ key: 'NSFileHandle', parent: 'NSObject' });
+nodeDataArray.push({ key: 'NSPropertyListSerialization', parent: 'NSObject' });
+nodeDataArray.push({ key: 'NSTimer', parent: 'NSObject' });
+nodeDataArray.push({ key: 'NSOrderedSet', parent: 'NSObject' });
+nodeDataArray.push({ key: 'NSURLProtectionSpace', parent: 'NSObject' });
+nodeDataArray.push({ key: 'NSMessagePort', parent: 'NSPort' });
+nodeDataArray.push({ key: 'NSURLAuthenticationChallenge', parent: 'NSObject' });
+nodeDataArray.push({ key: 'NSBlockOperation', parent: 'NSOperation' });
+nodeDataArray.push({ key: 'NSTimeZone', parent: 'NSObject' });
+nodeDataArray.push({ key: 'NSNotification', parent: 'NSObject' });
+nodeDataArray.push({ key: 'NSHashTable', parent: 'NSObject' });
+nodeDataArray.push({ key: 'NSMachPort', parent: 'NSPort' });
+nodeDataArray.push({ key: 'NSJSONSerialization', parent: 'NSObject' });
+nodeDataArray.push({ key: 'NSCondition', parent: 'NSObject' });
+nodeDataArray.push({ key: 'NSLinguisticTagger', parent: 'NSObject' });
+nodeDataArray.push({ key: 'NSCompoundPredicate', parent: 'NSPredicate' });
+nodeDataArray.push({ key: 'NSPort', parent: 'NSObject' });
+nodeDataArray.push({ key: 'NSStream', parent: 'NSObject' });
+nodeDataArray.push({ key: 'NSExpression', parent: 'NSObject' });
+nodeDataArray.push({ key: 'NSPredicate', parent: 'NSObject' });
+nodeDataArray.push({ key: 'NSMutableSet', parent: 'NSSet' });
+nodeDataArray.push({ key: 'NSFileCoordinator', parent: 'NSObject' });
+nodeDataArray.push({ key: 'NSCountedSet', parent: 'NSMutableSet' });
+nodeDataArray.push({ key: 'NSIndexSet', parent: 'NSObject' });
+nodeDataArray.push({ key: 'NSHTTPCookie', parent: 'NSObject' });
+nodeDataArray.push({ key: 'NSPointerArray', parent: 'NSObject' });
+nodeDataArray.push({ key: 'NSPipe', parent: 'NSObject' });
+nodeDataArray.push({ key: 'NSOperation', parent: 'NSObject' });
+nodeDataArray.push({ key: 'NSHTTPCookieStorage', parent: 'NSObject' });
+nodeDataArray.push({ key: 'NSValue', parent: 'NSObject' });
+nodeDataArray.push({ key: 'NSUserDefaults', parent: 'NSObject' });
+nodeDataArray.push({ key: 'NSOrthography', parent: 'NSObject' });
+nodeDataArray.push({ key: 'NSURLConnection', parent: 'NSObject' });
+nodeDataArray.push({ key: 'NSSocketPort', parent: 'NSPort' });
+nodeDataArray.push({ key: 'NSSortDescriptor', parent: 'NSObject' });
+nodeDataArray.push({ key: 'NSCache', parent: 'NSObject' });
+nodeDataArray.push({ key: 'NSURLCache', parent: 'NSObject' });
+nodeDataArray.push({ key: 'NSURLResponse', parent: 'NSObject' });
+nodeDataArray.push({ key: 'NSNumber', parent: 'NSValue' });
+nodeDataArray.push({ key: 'NSUbiquitousKeyValueStore', parent: 'NSObject' });
+nodeDataArray.push({ key: 'NSUUID', parent: 'NSObject' });
+nodeDataArray.push({ key: 'NSOperationQueue', parent: 'NSObject' });
+nodeDataArray.push({ key: 'NSString', parent: 'NSObject' });
+nodeDataArray.push({ key: 'NSAttributedString', parent: 'NSObject' });
+nodeDataArray.push({ key: 'NSNotificationQueue', parent: 'NSObject' });
+nodeDataArray.push({ key: 'NSCoder', parent: 'NSObject' });
+nodeDataArray.push({ key: 'NSMutableData', parent: 'NSData' });
+nodeDataArray.push({ key: 'NSSimpleCString', parent: 'NSString' });
+nodeDataArray.push({ key: 'NSError', parent: 'NSObject' });
+nodeDataArray.push({ key: 'NSDateComponents', parent: 'NSObject' });
+nodeDataArray.push({ key: 'NSXMLParser', parent: 'NSObject' });
+nodeDataArray.push({ key: 'NSDirectoryEnumerator', parent: 'NSEnumerator' });
+nodeDataArray.push({ key: 'NSDecimalNumber', parent: 'NSNumber' });
+nodeDataArray.push({ key: 'NSMutableAttributedString', parent: 'NSAttributedString' });
+nodeDataArray.push({ key: 'NSOutputStream', parent: 'NSStream' });
+nodeDataArray.push({ key: 'NSValueTransformer', parent: 'NSObject' });
+nodeDataArray.push({ key: 'NSCalendar', parent: 'NSObject' });
+nodeDataArray.push({ key: 'NSUndoManager', parent: 'NSObject' });
+nodeDataArray.push({ key: 'NSTextCheckingResult', parent: 'NSObject' });
+nodeDataArray.push({ key: 'NSFileManager', parent: 'NSObject' });
+nodeDataArray.push({ key: 'NSRegularExpression', parent: 'NSObject' });
+nodeDataArray.push({ key: 'NSHTTPURLResponse', parent: 'NSURLResponse' });
+nodeDataArray.push({ key: 'NSNumberFormatter', parent: 'NSFormatter' });
+nodeDataArray.push({ key: 'NSInvocation', parent: 'NSObject' });
+nodeDataArray.push({ key: 'NSArray', parent: 'NSObject' });
+nodeDataArray.push({ key: 'NSAssertionHandler', parent: 'NSObject' });
+nodeDataArray.push({ key: 'NSPurgeableData', parent: 'NSMutableData' });
+nodeDataArray.push({ key: 'NSFileWrapper', parent: 'NSObject' });
+nodeDataArray.push({ key: 'NSMutableIndexSet', parent: 'NSIndexSet' });
+nodeDataArray.push({ key: 'NSEnumerator', parent: 'NSObject' });
+nodeDataArray.push({ key: 'NSData', parent: 'NSObject' });
+nodeDataArray.push({ key: 'NSInvocationOperation', parent: 'NSOperation' });
+nodeDataArray.push({ key: 'NSDataDetector', parent: 'NSRegularExpression' });
+nodeDataArray.push({ key: 'NSDate', parent: 'NSObject' });
+nodeDataArray.push({ key: 'NSSet', parent: 'NSObject' });
+nodeDataArray.push({ key: 'NSRecursiveLock', parent: 'NSObject' });
+nodeDataArray.push({ key: 'NSConditionLock', parent: 'NSObject' });
+nodeDataArray.push({ key: 'NSMutableURLRequest', parent: 'NSURLRequest' });
+nodeDataArray.push({ key: 'NSProcessInfo', parent: 'NSObject' });
+nodeDataArray.push({ key: 'NSComparisonPredicate', parent: 'NSPredicate' });
+nodeDataArray.push({ key: 'NSMetadataQueryResultGroup', parent: 'NSObject' });
+nodeDataArray.push({ key: 'NSNotificationCenter', parent: 'NSObject' });
+nodeDataArray.push({ key: 'NSURLProtocol', parent: 'NSObject' });
+nodeDataArray.push({ key: 'NSNetServiceBrowser', parent: 'NSObject' });
+nodeDataArray.push({ key: 'NSFormatter', parent: 'NSObject' });
+nodeDataArray.push({ key: 'NSThread', parent: 'NSObject' });
+nodeDataArray.push({ key: 'NSFileVersion', parent: 'NSObject' });
+nodeDataArray.push({ key: 'NSURLCredentialStorage', parent: 'NSObject' });
+nodeDataArray.push({ key: 'NSByteCountFormatter', parent: 'NSFormatter' });
+nodeDataArray.push({ key: 'NSKeyedUnarchiver', parent: 'NSCoder' });
+nodeDataArray.push({ key: 'NSIndexPath', parent: 'NSObject' });
+nodeDataArray.push({ key: 'NSLock', parent: 'NSObject' });
+nodeDataArray.push({ key: 'SLRequest', parent: 'NSObject' });
+nodeDataArray.push({ key: 'SLComposeViewController', parent: 'UIViewController' });
+nodeDataArray.push({ key: 'AVAssetReaderTrackOutput', parent: 'AVAssetReaderOutput' });
+nodeDataArray.push({ key: 'AVAudioMix', parent: 'NSObject' });
+nodeDataArray.push({ key: 'AVMediaSelectionOption', parent: 'NSObject' });
+nodeDataArray.push({ key: 'AVAssetWriterInputPixelBufferAdaptor', parent: 'NSObject' });
+nodeDataArray.push({ key: 'AVCompositionTrackSegment', parent: 'AVAssetTrackSegment' });
+nodeDataArray.push({ key: 'AVAudioSessionChannelDescription', parent: 'NSObject' });
+nodeDataArray.push({ key: 'AVCaptureAudioChannel', parent: 'NSObject' });
+nodeDataArray.push({ key: 'AVAssetReaderOutput', parent: 'NSObject' });
+nodeDataArray.push({ key: 'AVPlayerLayer', parent: 'CALayer' });
+nodeDataArray.push({ key: 'AVVideoCompositionLayerInstruction', parent: 'NSObject' });
+nodeDataArray.push({ key: 'AVAssetResourceLoadingRequest', parent: 'NSObject' });
+nodeDataArray.push({ key: 'AVMutableCompositionTrack', parent: 'AVCompositionTrack' });
+nodeDataArray.push({ key: 'AVCompositionTrack', parent: 'AVAssetTrack' });
+nodeDataArray.push({ key: 'AVCaptureMovieFileOutput', parent: 'AVCaptureFileOutput' });
+nodeDataArray.push({ key: 'AVAssetReaderVideoCompositionOutput', parent: 'AVAssetReaderOutput' });
+nodeDataArray.push({ key: 'AVAssetImageGenerator', parent: 'NSObject' });
+nodeDataArray.push({ key: 'AVMetadataObject', parent: 'NSObject' });
+nodeDataArray.push({ key: 'AVTextStyleRule', parent: 'NSObject' });
+nodeDataArray.push({ key: 'AVMutableComposition', parent: 'AVComposition' });
+nodeDataArray.push({ key: 'AVMutableTimedMetadataGroup', parent: 'AVTimedMetadataGroup' });
+nodeDataArray.push({ key: 'AVPlayerItemAccessLog', parent: 'NSObject' });
+nodeDataArray.push({ key: 'AVMediaSelectionGroup', parent: 'NSObject' });
+nodeDataArray.push({ key: 'AVCaptureAudioPreviewOutput', parent: 'AVCaptureOutput' });
+nodeDataArray.push({ key: 'AVCaptureDevice', parent: 'NSObject' });
+nodeDataArray.push({ key: 'AVURLAsset', parent: 'AVAsset' });
+nodeDataArray.push({ key: 'AVMutableAudioMixInputParameters', parent: 'AVAudioMixInputParameters' });
+nodeDataArray.push({ key: 'AVCaptureAudioFileOutput', parent: 'AVCaptureFileOutput' });
+nodeDataArray.push({ key: 'AVFrameRateRange', parent: 'NSObject' });
+nodeDataArray.push({ key: 'AVPlayer', parent: 'NSObject' });
+nodeDataArray.push({ key: 'AVSynchronizedLayer', parent: 'CALayer' });
+nodeDataArray.push({ key: 'AVVideoComposition', parent: 'NSObject' });
+nodeDataArray.push({ key: 'AVCaptureStillImageOutput', parent: 'AVCaptureOutput' });
+nodeDataArray.push({ key: 'AVCaptureSession', parent: 'NSObject' });
+nodeDataArray.push({ key: 'AVAudioSessionPortDescription', parent: 'NSObject' });
+nodeDataArray.push({ key: 'AVAssetExportSession', parent: 'NSObject' });
+nodeDataArray.push({ key: 'AVTimedMetadataGroup', parent: 'NSObject' });
+nodeDataArray.push({ key: 'AVPlayerItem', parent: 'NSObject' });
+nodeDataArray.push({ key: 'AVCaptureDeviceFormat', parent: 'NSObject' });
+nodeDataArray.push({ key: 'AVMutableVideoCompositionInstruction', parent: 'AVVideoCompositionInstruction' });
+nodeDataArray.push({ key: 'AVAudioSessionDataSourceDescription', parent: 'NSObject' });
+nodeDataArray.push({ key: 'AVPlayerItemErrorLogEvent', parent: 'NSObject' });
+nodeDataArray.push({ key: 'AVCaptureAudioDataOutput', parent: 'AVCaptureOutput' });
+nodeDataArray.push({ key: 'AVCaptureMetadataOutput', parent: 'AVCaptureOutput' });
+nodeDataArray.push({ key: 'AVAsset', parent: 'NSObject' });
+nodeDataArray.push({ key: 'AVPlayerItemOutput', parent: 'NSObject' });
+nodeDataArray.push({ key: 'AVAudioSession', parent: 'NSObject' });
+nodeDataArray.push({ key: 'AVAudioSessionRouteDescription', parent: 'NSObject' });
+nodeDataArray.push({ key: 'AVCaptureFileOutput', parent: 'AVCaptureOutput' });
+nodeDataArray.push({ key: 'AVAssetTrackSegment', parent: 'NSObject' });
+nodeDataArray.push({ key: 'AVAssetResourceLoader', parent: 'NSObject' });
+nodeDataArray.push({ key: 'AVPlayerItemVideoOutput', parent: 'AVPlayerItemOutput' });
+nodeDataArray.push({ key: 'AVAudioPlayer', parent: 'NSObject' });
+nodeDataArray.push({ key: 'AVVideoCompositionCoreAnimationTool', parent: 'NSObject' });
+nodeDataArray.push({ key: 'AVCaptureVideoPreviewLayer', parent: 'CALayer' });
+nodeDataArray.push({ key: 'AVCaptureInputPort', parent: 'NSObject' });
+nodeDataArray.push({ key: 'AVVideoCompositionInstruction', parent: 'NSObject' });
+nodeDataArray.push({ key: 'AVCaptureInput', parent: 'NSObject' });
+nodeDataArray.push({ key: 'AVAssetReaderAudioMixOutput', parent: 'AVAssetReaderOutput' });
+nodeDataArray.push({ key: 'AVMutableAudioMix', parent: 'AVAudioMix' });
+nodeDataArray.push({ key: 'AVCaptureDeviceInput', parent: 'AVCaptureInput' });
+nodeDataArray.push({ key: 'AVAssetTrack', parent: 'NSObject' });
+nodeDataArray.push({ key: 'AVCaptureVideoDataOutput', parent: 'AVCaptureOutput' });
+nodeDataArray.push({ key: 'AVComposition', parent: 'AVAsset' });
+nodeDataArray.push({ key: 'AVCaptureScreenInput', parent: 'AVCaptureInput' });
+nodeDataArray.push({ key: 'AVMetadataItem', parent: 'NSObject' });
+nodeDataArray.push({ key: 'AVPlayerItemAccessLogEvent', parent: 'NSObject' });
+nodeDataArray.push({ key: 'AVPlayerItemErrorLog', parent: 'NSObject' });
+nodeDataArray.push({ key: 'AVQueuePlayer', parent: 'AVPlayer' });
+nodeDataArray.push({ key: 'AVAssetReader', parent: 'NSObject' });
+nodeDataArray.push({ key: 'AVMetadataFaceObject', parent: 'AVMetadataObject' });
+nodeDataArray.push({ key: 'AVAudioRecorder', parent: 'NSObject' });
+nodeDataArray.push({ key: 'AVAssetWriterInput', parent: 'NSObject' });
+nodeDataArray.push({ key: 'AVMutableVideoComposition', parent: 'AVVideoComposition' });
+nodeDataArray.push({ key: 'AVMutableMetadataItem', parent: 'AVMetadataItem' });
+nodeDataArray.push({ key: 'AVCaptureOutput', parent: 'NSObject' });
+nodeDataArray.push({ key: 'AVCaptureConnection', parent: 'NSObject' });
+nodeDataArray.push({ key: 'AVPlayerItemTrack', parent: 'NSObject' });
+nodeDataArray.push({ key: 'AVCaptureDeviceInputSource', parent: 'NSObject' });
+nodeDataArray.push({ key: 'AVAssetWriter', parent: 'NSObject' });
+nodeDataArray.push({ key: 'AVMutableVideoCompositionLayerInstruction', parent: 'AVVideoCompositionLayerInstruction' });
+nodeDataArray.push({ key: 'AVAudioMixInputParameters', parent: 'NSObject' });
+nodeDataArray.push({ key: 'CBCentralManager', parent: 'NSObject' });
+nodeDataArray.push({ key: 'CBPeripheralManager', parent: 'NSObject' });
+nodeDataArray.push({ key: 'CBCharacteristic', parent: 'NSObject' });
+nodeDataArray.push({ key: 'CBATTRequest', parent: 'NSObject' });
+nodeDataArray.push({ key: 'CBMutableDescriptor', parent: 'CBDescriptor' });
+nodeDataArray.push({ key: 'CBMutableCharacteristic', parent: 'CBCharacteristic' });
+nodeDataArray.push({ key: 'CBPeripheral', parent: 'NSObject' });
+nodeDataArray.push({ key: 'CBDescriptor', parent: 'NSObject' });
+nodeDataArray.push({ key: 'CBUUID', parent: 'NSObject' });
+nodeDataArray.push({ key: 'CBService', parent: 'NSObject' });
+nodeDataArray.push({ key: 'CBMutableService', parent: 'CBService' });
+nodeDataArray.push({ key: 'CBCentral', parent: 'NSObject' });
+nodeDataArray.push({ key: 'NSMergePolicy', parent: 'NSObject' });
+nodeDataArray.push({ key: 'NSIncrementalStoreNode', parent: 'NSObject' });
+nodeDataArray.push({ key: 'NSPersistentStoreRequest', parent: 'NSObject' });
+nodeDataArray.push({ key: 'NSRelationshipDescription', parent: 'NSPropertyDescription' });
+nodeDataArray.push({ key: 'NSSaveChangesRequest', parent: 'NSPersistentStoreRequest' });
+nodeDataArray.push({ key: 'NSPropertyMapping', parent: 'NSObject' });
+nodeDataArray.push({ key: 'NSIncrementalStore', parent: 'NSPersistentStore' });
+nodeDataArray.push({ key: 'NSEntityMigrationPolicy', parent: 'NSObject' });
+nodeDataArray.push({ key: 'NSAttributeDescription', parent: 'NSPropertyDescription' });
+nodeDataArray.push({ key: 'NSFetchedResultsController', parent: 'NSObject' });
+nodeDataArray.push({ key: 'NSPersistentStoreCoordinator', parent: 'NSObject' });
+nodeDataArray.push({ key: 'NSMappingModel', parent: 'NSObject' });
+nodeDataArray.push({ key: 'NSFetchedPropertyDescription', parent: 'NSPropertyDescription' });
+nodeDataArray.push({ key: 'NSFetchRequest', parent: 'NSPersistentStoreRequest' });
+nodeDataArray.push({ key: 'NSMigrationManager', parent: 'NSObject' });
+nodeDataArray.push({ key: 'NSEntityDescription', parent: 'NSObject' });
+nodeDataArray.push({ key: 'NSPersistentStore', parent: 'NSObject' });
+nodeDataArray.push({ key: 'NSPropertyDescription', parent: 'NSObject' });
+nodeDataArray.push({ key: 'NSManagedObjectModel', parent: 'NSObject' });
+nodeDataArray.push({ key: 'NSAtomicStoreCacheNode', parent: 'NSObject' });
+nodeDataArray.push({ key: 'NSManagedObject', parent: 'NSObject' });
+nodeDataArray.push({ key: 'NSAtomicStore', parent: 'NSPersistentStore' });
+nodeDataArray.push({ key: 'NSFetchRequestExpression', parent: 'NSExpression' });
+nodeDataArray.push({ key: 'NSManagedObjectContext', parent: 'NSObject' });
+nodeDataArray.push({ key: 'NSEntityMapping', parent: 'NSObject' });
+nodeDataArray.push({ key: 'NSMergeConflict', parent: 'NSObject' });
+nodeDataArray.push({ key: 'NSManagedObjectID', parent: 'NSObject' });
+nodeDataArray.push({ key: 'NSExpressionDescription', parent: 'NSPropertyDescription' });
+nodeDataArray.push({ key: 'GLKTextureInfo', parent: 'NSObject' });
+nodeDataArray.push({ key: 'GLKEffectProperty', parent: 'NSObject' });
+nodeDataArray.push({ key: 'GLKReflectionMapEffect', parent: 'GLKBaseEffect' });
+nodeDataArray.push({ key: 'GLKBaseEffect', parent: 'NSObject' });
+nodeDataArray.push({ key: 'GLKViewController', parent: 'UIViewController' });
+nodeDataArray.push({ key: 'GLKView', parent: 'UIView' });
+nodeDataArray.push({ key: 'GLKEffectPropertyTransform', parent: 'GLKEffectProperty' });
+nodeDataArray.push({ key: 'GLKSkyboxEffect', parent: 'NSObject' });
+nodeDataArray.push({ key: 'GLKTextureLoader', parent: 'NSObject' });
+nodeDataArray.push({ key: 'GLKEffectPropertyMaterial', parent: 'GLKEffectProperty' });
+nodeDataArray.push({ key: 'GLKEffectPropertyFog', parent: 'GLKEffectProperty' });
+nodeDataArray.push({ key: 'GLKEffectPropertyTexture', parent: 'GLKEffectProperty' });
+nodeDataArray.push({ key: 'GLKEffectPropertyLight', parent: 'GLKEffectProperty' });
+nodeDataArray.push({ key: 'GKMatchmakerViewController', parent: 'UINavigationController' });
+nodeDataArray.push({ key: 'GKLocalPlayer', parent: 'GKPlayer' });
+nodeDataArray.push({ key: 'GKTurnBasedEventHandler', parent: 'NSObject' });
+nodeDataArray.push({ key: 'GKTurnBasedMatchmakerViewController', parent: 'UINavigationController' });
+nodeDataArray.push({ key: 'GKScore', parent: 'NSObject' });
+nodeDataArray.push({ key: 'GKPlayer', parent: 'NSObject' });
+nodeDataArray.push({ key: 'GKTurnBasedMatch', parent: 'NSObject' });
+nodeDataArray.push({ key: 'GKAchievementChallenge', parent: 'GKChallenge' });
+nodeDataArray.push({ key: 'GKSession', parent: 'NSObject' });
+nodeDataArray.push({ key: 'GKMatchmaker', parent: 'NSObject' });
+nodeDataArray.push({ key: 'GKTurnBasedParticipant', parent: 'NSObject' });
+nodeDataArray.push({ key: 'GKVoiceChatService', parent: 'NSObject' });
+nodeDataArray.push({ key: 'GKLeaderboard', parent: 'NSObject' });
+nodeDataArray.push({ key: 'GKAchievementDescription', parent: 'NSObject' });
+nodeDataArray.push({ key: 'GKLeaderboardViewController', parent: 'GKGameCenterViewController' });
+nodeDataArray.push({ key: 'GKGameCenterViewController', parent: 'UINavigationController' });
+nodeDataArray.push({ key: 'GKFriendRequestComposeViewController', parent: 'UINavigationController' });
+nodeDataArray.push({ key: 'GKMatchRequest', parent: 'NSObject' });
+nodeDataArray.push({ key: 'GKInvite', parent: 'NSObject' });
+nodeDataArray.push({ key: 'GKNotificationBanner', parent: 'NSObject' });
+nodeDataArray.push({ key: 'GKChallenge', parent: 'NSObject' });
+nodeDataArray.push({ key: 'GKAchievement', parent: 'NSObject' });
+nodeDataArray.push({ key: 'GKScoreChallenge', parent: 'GKChallenge' });
+nodeDataArray.push({ key: 'GKVoiceChat', parent: 'NSObject' });
+nodeDataArray.push({ key: 'GKChallengeEventHandler', parent: 'NSObject' });
+nodeDataArray.push({ key: 'GKMatch', parent: 'NSObject' });
+nodeDataArray.push({ key: 'GKAchievementViewController', parent: 'GKGameCenterViewController' });
+nodeDataArray.push({ key: 'GKPeerPickerController', parent: 'NSObject' });
+nodeDataArray.push({ key: 'NKIssue', parent: 'NSObject' });
+nodeDataArray.push({ key: 'NKAssetDownload', parent: 'NSObject' });
+nodeDataArray.push({ key: 'NKLibrary', parent: 'NSObject' });
+nodeDataArray.push({ key: 'QLPreviewController', parent: 'UIViewController' });
+nodeDataArray.push({ key: 'ABNewPersonViewController', parent: 'UIViewController' });
+nodeDataArray.push({ key: 'ABPersonViewController', parent: 'UIViewController' });
+nodeDataArray.push({ key: 'ABPeoplePickerNavigationController', parent: 'UINavigationController' });
+nodeDataArray.push({ key: 'ABUnknownPersonViewController', parent: 'UIViewController' });
+nodeDataArray.push({ key: 'MFMailComposeViewController', parent: 'UINavigationController' });
+nodeDataArray.push({ key: 'MFMessageComposeViewController', parent: 'UINavigationController' });
+nodeDataArray.push({ key: 'ALAsset', parent: 'NSObject' });
+nodeDataArray.push({ key: 'ALAssetRepresentation', parent: 'NSObject' });
+nodeDataArray.push({ key: 'ALAssetsFilter', parent: 'NSObject' });
+nodeDataArray.push({ key: 'ALAssetsGroup', parent: 'NSObject' });
+nodeDataArray.push({ key: 'ALAssetsLibrary', parent: 'NSObject' });
+nodeDataArray.push({ key: 'SKMutablePayment', parent: 'SKPayment' });
+nodeDataArray.push({ key: 'SKDownload', parent: 'NSObject' });
+nodeDataArray.push({ key: 'SKProductsResponse', parent: 'NSObject' });
+nodeDataArray.push({ key: 'SKPaymentQueue', parent: 'NSObject' });
+nodeDataArray.push({ key: 'SKPayment', parent: 'NSObject' });
+nodeDataArray.push({ key: 'SKPaymentTransaction', parent: 'NSObject' });
+nodeDataArray.push({ key: 'SKProductsRequest', parent: 'SKRequest' });
+nodeDataArray.push({ key: 'SKProduct', parent: 'NSObject' });
+nodeDataArray.push({ key: 'SKRequest', parent: 'NSObject' });
+nodeDataArray.push({ key: 'SKStoreProductViewController', parent: 'UIViewController' });
+nodeDataArray.push({ key: 'UITabBarController', parent: 'UIViewController' });
+nodeDataArray.push({ key: 'UINavigationBar', parent: 'UIView' });
+nodeDataArray.push({ key: 'UIProgressView', parent: 'UIView' });
+nodeDataArray.push({ key: 'UIRefreshControl', parent: 'UIControl' });
+nodeDataArray.push({ key: 'NSParagraphStyle', parent: 'NSObject' });
+nodeDataArray.push({ key: 'UIButton', parent: 'UIControl' });
+nodeDataArray.push({ key: 'UITextPosition', parent: 'NSObject' });
+nodeDataArray.push({ key: 'UIEvent', parent: 'NSObject' });
+nodeDataArray.push({ key: 'UITapGestureRecognizer', parent: 'UIGestureRecognizer' });
+nodeDataArray.push({ key: 'UIImage', parent: 'NSObject' });
+nodeDataArray.push({ key: 'UIActivityIndicatorView', parent: 'UIView' });
+nodeDataArray.push({ key: 'UIActionSheet', parent: 'UIView' });
+nodeDataArray.push({ key: 'UITableViewCell', parent: 'UIView' });
+nodeDataArray.push({ key: 'UILocalNotification', parent: 'NSObject' });
+nodeDataArray.push({ key: 'UIStoryboardSegue', parent: 'NSObject' });
+nodeDataArray.push({ key: 'UIBarButtonItem', parent: 'UIBarItem' });
+nodeDataArray.push({ key: 'UILongPressGestureRecognizer', parent: 'UIGestureRecognizer' });
+nodeDataArray.push({ key: 'UITabBar', parent: 'UIView' });
+nodeDataArray.push({ key: 'UINavigationItem', parent: 'NSObject' });
+nodeDataArray.push({ key: 'UITouch', parent: 'NSObject' });
+nodeDataArray.push({ key: 'UIApplication', parent: 'UIResponder' });
+nodeDataArray.push({ key: 'UICollectionViewController', parent: 'UIViewController' });
+nodeDataArray.push({ key: 'UILabel', parent: 'UIView' });
+nodeDataArray.push({ key: 'UITableViewController', parent: 'UIViewController' });
+nodeDataArray.push({ key: 'UIPageViewController', parent: 'UIViewController' });
+nodeDataArray.push({ key: 'UIView', parent: 'UIResponder' });
+nodeDataArray.push({ key: 'UIStoryboardPopoverSegue', parent: 'UIStoryboardSegue' });
+nodeDataArray.push({ key: 'UIDocumentInteractionController', parent: 'NSObject' });
+nodeDataArray.push({ key: 'UIImagePickerController', parent: 'UINavigationController' });
+nodeDataArray.push({ key: 'UIActivity', parent: 'NSObject' });
+nodeDataArray.push({ key: 'UIPrintInteractionController', parent: 'NSObject' });
+nodeDataArray.push({ key: 'NSLayoutConstraint', parent: 'NSObject' });
+nodeDataArray.push({ key: 'UIDatePicker', parent: 'UIControl' });
+nodeDataArray.push({ key: 'UILocalizedIndexedCollation', parent: 'NSObject' });
+nodeDataArray.push({ key: 'UIColor', parent: 'NSObject' });
+nodeDataArray.push({ key: 'UIRotationGestureRecognizer', parent: 'UIGestureRecognizer' });
+nodeDataArray.push({ key: 'UITableView', parent: 'UIScrollView' });
+nodeDataArray.push({ key: 'UIViewPrintFormatter', parent: 'UIPrintFormatter' });
+nodeDataArray.push({ key: 'UITabBarItem', parent: 'UIBarItem' });
+nodeDataArray.push({ key: 'UISimpleTextPrintFormatter', parent: 'UIPrintFormatter' });
+nodeDataArray.push({ key: 'UIAccelerometer', parent: 'NSObject' });
+nodeDataArray.push({ key: 'UIPrintFormatter', parent: 'NSObject' });
+nodeDataArray.push({ key: 'UIWindow', parent: 'UIView' });
+nodeDataArray.push({ key: 'UICollectionViewLayoutAttributes', parent: 'NSObject' });
+nodeDataArray.push({ key: 'UITextInputMode', parent: 'NSObject' });
+nodeDataArray.push({ key: 'UIScreen', parent: 'NSObject' });
+nodeDataArray.push({ key: 'UISlider', parent: 'UIControl' });
+nodeDataArray.push({ key: 'UIManagedDocument', parent: 'UIDocument' });
+nodeDataArray.push({ key: 'UICollectionView', parent: 'UIScrollView' });
+nodeDataArray.push({ key: 'UIPinchGestureRecognizer', parent: 'UIGestureRecognizer' });
+nodeDataArray.push({ key: 'NSMutableParagraphStyle', parent: 'NSParagraphStyle' });
+nodeDataArray.push({ key: 'UICollectionViewUpdateItem', parent: 'NSObject' });
+nodeDataArray.push({ key: 'UISwipeGestureRecognizer', parent: 'UIGestureRecognizer' });
+nodeDataArray.push({ key: 'UITextChecker', parent: 'NSObject' });
+nodeDataArray.push({ key: 'UIControl', parent: 'UIView' });
+nodeDataArray.push({ key: 'UIBezierPath', parent: 'NSObject' });
+nodeDataArray.push({ key: 'UISplitViewController', parent: 'UIViewController' });
+nodeDataArray.push({ key: 'UITextView', parent: 'UIScrollView' });
+nodeDataArray.push({ key: 'UITextRange', parent: 'NSObject' });
+nodeDataArray.push({ key: 'UIScrollView', parent: 'UIView' });
+nodeDataArray.push({ key: 'UIActivityItemProvider', parent: 'NSOperation' });
+nodeDataArray.push({ key: 'UITextField', parent: 'UIControl' });
+nodeDataArray.push({ key: 'UICollectionViewCell', parent: 'UICollectionReusableView' });
+nodeDataArray.push({ key: 'UIDocument', parent: 'NSObject' });
+nodeDataArray.push({ key: 'UIAlertView', parent: 'UIView' });
+nodeDataArray.push({ key: 'UIFont', parent: 'NSObject' });
+nodeDataArray.push({ key: 'UIDevice', parent: 'NSObject' });
+nodeDataArray.push({ key: 'UIMenuController', parent: 'NSObject' });
+nodeDataArray.push({ key: 'UIReferenceLibraryViewController', parent: 'UIViewController}' });
+nodeDataArray.push({ key: 'UIAccessibilityElement', parent: 'NSObject' });
+nodeDataArray.push({ key: 'UICollectionReusableView', parent: 'UIView' });
+nodeDataArray.push({ key: 'UISegmentedControl', parent: 'UIControl' });
+nodeDataArray.push({ key: 'UIViewController', parent: 'UIResponder' });
+nodeDataArray.push({ key: 'UIPasteboard', parent: 'NSObject' });
+nodeDataArray.push({ key: 'UISwitch', parent: 'UIControl' });
+nodeDataArray.push({ key: 'UITextInputStringTokenizer', parent: 'NSObject' });
+nodeDataArray.push({ key: 'UIPageControl', parent: 'UIControl' });
+nodeDataArray.push({ key: 'NSStringDrawingContext', parent: 'NSObject' });
+nodeDataArray.push({ key: 'UINavigationController', parent: 'UIViewController' });
+nodeDataArray.push({ key: 'UIPrintPageRenderer', parent: 'NSObject' });
+nodeDataArray.push({ key: 'UIPopoverBackgroundView', parent: 'UIView}' });
+nodeDataArray.push({ key: 'UIPickerView', parent: 'UIView' });
+nodeDataArray.push({ key: 'UIResponder', parent: 'NSObject' });
+nodeDataArray.push({ key: 'UIGestureRecognizer', parent: 'NSObject' });
+nodeDataArray.push({ key: 'UIPrintPaper', parent: 'NSObject' });
+nodeDataArray.push({ key: 'UIDictationPhrase', parent: 'NSObject' });
+nodeDataArray.push({ key: 'UIStepper', parent: 'UIControl' });
+nodeDataArray.push({ key: 'UIVideoEditorController', parent: 'UINavigationController' });
+nodeDataArray.push({ key: 'UIPopoverController', parent: 'NSObject' });
+nodeDataArray.push({ key: 'UIMarkupTextPrintFormatter', parent: 'UIPrintFormatter' });
+nodeDataArray.push({ key: 'UIScreenMode', parent: 'NSObject' });
+nodeDataArray.push({ key: 'UIMenuItem', parent: 'NSObject' });
+nodeDataArray.push({ key: 'UIToolbar', parent: 'UIView' });
+nodeDataArray.push({ key: 'NSShadow', parent: 'NSObject' });
+nodeDataArray.push({ key: 'UIWebView', parent: 'UIView' });
+nodeDataArray.push({ key: 'UICollectionViewFlowLayout', parent: 'UICollectionViewLayout' });
+nodeDataArray.push({ key: 'UINib', parent: 'NSObject' });
+nodeDataArray.push({ key: 'UIPanGestureRecognizer', parent: 'UIGestureRecognizer' });
+nodeDataArray.push({ key: 'UIImageView', parent: 'UIView' });
+nodeDataArray.push({ key: 'UISearchDisplayController', parent: 'NSObject' });
+nodeDataArray.push({ key: 'UIStoryboard', parent: 'NSObject' });
+nodeDataArray.push({ key: 'UIPrintInfo', parent: 'NSObject' });
+nodeDataArray.push({ key: 'UIBarItem', parent: 'NSObject' });
+nodeDataArray.push({ key: 'UITableViewHeaderFooterView', parent: 'UIView' });
+nodeDataArray.push({ key: 'UITextSelectionRect', parent: 'NSObject' });
+nodeDataArray.push({ key: 'UICollectionViewLayout', parent: 'NSObject' });
+nodeDataArray.push({ key: 'UIAcceleration', parent: 'NSObject' });
+nodeDataArray.push({ key: 'UIActivityViewController', parent: 'UIViewController' });
+nodeDataArray.push({ key: 'UISearchBar', parent: 'UIView' });
+nodeDataArray.push({ key: 'ADInterstitialAd', parent: 'NSObject' });
+nodeDataArray.push({ key: 'ADBannerView', parent: 'UIView' });
+nodeDataArray.push({ key: 'EKObject', parent: 'NSObject' });
+nodeDataArray.push({ key: 'EKCalendarItem', parent: 'EKObject' });
+nodeDataArray.push({ key: 'EKAlarm', parent: 'EKObject' });
+nodeDataArray.push({ key: 'EKEventStore', parent: 'NSObject' });
+nodeDataArray.push({ key: 'EKRecurrenceEnd', parent: 'NSObject' });
+nodeDataArray.push({ key: 'EKCalendar', parent: 'EKObject' });
+nodeDataArray.push({ key: 'EKParticipant', parent: 'EKObject' });
+nodeDataArray.push({ key: 'EKRecurrenceDayOfWeek', parent: 'NSObject' });
+nodeDataArray.push({ key: 'EKEvent', parent: 'EKCalendarItem' });
+nodeDataArray.push({ key: 'EKReminder', parent: 'EKCalendarItem' });
+nodeDataArray.push({ key: 'EKRecurrenceRule', parent: 'EKObject' });
+nodeDataArray.push({ key: 'EKSource', parent: 'EKObject' });
+nodeDataArray.push({ key: 'EKStructuredLocation', parent: 'EKObject' });
+nodeDataArray.push({ key: 'ACAccountCredential', parent: 'NSObject' });
+nodeDataArray.push({ key: 'ACAccountType', parent: 'NSObject' });
+nodeDataArray.push({ key: 'ACAccount', parent: 'NSObject' });
+nodeDataArray.push({ key: 'ACAccountStore', parent: 'NSObject' });
+nodeDataArray.push({ key: 'CTCall', parent: 'NSObject' });
+nodeDataArray.push({ key: 'CTCallCenter', parent: 'NSObject' });
+nodeDataArray.push({ key: 'CTCarrier', parent: 'NSObject' });
+nodeDataArray.push({ key: 'CTTelephonyNetworkInfo', parent: 'NSObject' });
+
+
+
+    // Create the model for the hierarchy diagram
+    diagram.model = new go.TreeModel(nodeDataArray);
+
+    // Now collect all node data that are singletons
+    var singlesArray = [];  // for classes that don't inherit from another class
+    var it = diagram.nodes;
+    while (it.next()) {
+      var node = it.value;
+      if (node.linksConnected.count === 0) {
+        singlesArray.push(node.data);
+      }
+    }
+
+    // Remove the unconnected class nodes from the main Diagram
+    for (var i = 0; i < singlesArray.length; i++) {
+      diagram.model.removeNodeData(singlesArray[i]);
+    }
+
+    // Now lay out the diagram as a tree;
+    // separate trees are arranged vertically above each other.
+    diagram.layout = $(go.TreeLayout, { nodeSpacing: 5 });
+
+    // Display the unconnected classes in a separate Diagram
+    var singletons =
+      $(go.Diagram, "mySingletons",
+        { nodeTemplate: diagram.nodeTemplate, // Share the node template with the main Diagram
+          layout:
+            $(go.GridLayout,
+              { wrappingColumn: 5,  // Put the unconnected nodes in a column
+                spacing: new go.Size(3, 3) }),
+          model: new go.Model(singlesArray) });  // Use a separate model
+  }
+
+  // When a Node is double clicked, open the documentation for the corresponding class in a new window
+  function nodeDoubleClick(event, node) {
+    //window.open("../api/symbols/" + node.data.key + ".html");
+  }
+</script>
+
+
+</head>
+
+<body onload="init()">
+<div id="sample">
+
+  <div id="myDiagram" style="border:1px solid black; width:100%; height:800px; float:none"></div>
+ 
+</div>
+</body>
+</html>

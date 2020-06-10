@@ -1,0 +1,140 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+<title>打印</title>
+<meta name="keywords" content="zhangxi.me,张玺,zhangxi,zhangxi_1989,dodo糯,effy"/>
+<style type="text/css">
+html, body {
+				font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+				font-size: 14px;
+				font-weight: normal;
+				line-height: 18px;
+				color: #404040;
+				text-shadow: 0 1px 1px #fff;
+				margin: 0;
+				padding: 0;
+				overflow: hidden;
+				height: 100%;
+			}
+			body 
+			{
+				background-image: -webkit-linear-gradient(top, #d7dfe3 0%, #fafbfc 100%);
+				background-image: linear-gradient(to bottom, #d7dfe3 0%, #fafbfc 100%);
+			}
+			
+			.contentdiv {
+				text-align: center;
+				position: absolute;
+				width: 100%;
+				top: 22%;
+			}
+			.contentdiv_wedding
+			{
+				text-align: center;
+				position: absolute;
+				width: 100%;
+				top: 40%;
+			}
+			
+			
+		.logodiv {
+	text-align:center;
+	position:absolute;
+	width: 100%;
+	bottom: 5px;
+	height: 56px;
+			}
+			
+			a {
+				color: #404040;
+				text-decoration: none;
+				margin: 0 10px;
+				font-weight: bold;
+				-webkit-transition: color .15s linear;
+				-moz-transition: color .15s linear;
+				-ms-transition: color .15s linear;
+				-o-transition: color .15s linear;
+				transition: color .15s linear;
+			}
+			a:hover {
+				color: #08C;
+			}
+			h1, h2, h3, p {
+				font-size: 14px;
+				display: inline;
+			}
+			h1 {
+				margin-left: 10px;
+			}
+			h2 {
+				color: #a4a4a4;
+				margin-left: 0px;
+			}
+			h3 {
+				margin: 0 10px;
+				color: #a4a4a4;
+			}
+			p {
+				margin-top: 30px;
+				color: #a4a4a4;
+			}
+	
+</style>     
+  
+
+<script type="text/javascript">
+
+
+function print()
+{
+	var str = '[{"text": "大地神农客户订单\n","align": "center","double": true},{"text": "客户名称:张玺\n电话:15800000000\n地址:北京市\n","align": "left","double": false},{"text": "-------订单明细-------","align": "center","double": false},{"text": "商品名称:苹果\n数量:10\n","align": "left","double": false},{"text": "-------收款方式-------","align": "center","double": false},{"text": "收款方式:全款","align": "left","double": false},{"text": "操作账号:admin2","align": "center","double": false}]';  
+
+	window.location.href = "zxprinter://"+encodeURIComponent(str)
+}
+
+
+function print2()
+{
+    var str = '[{"text": "居中标题","align": "center","double": true},{"text": "左对齐标题","align": "left","double": true},{"text": "居中标题正文","align": "center","double": false},{"text": "左对齐正文","align": "left","double": false}]';  
+
+    window.location.href = "zxprinter://"+encodeURIComponent(str)
+}
+
+function print3()
+{
+    var str = '[{"text": "居中标题居中标题居中标题居中标题居中标题居中标题居中标题居中标题居中标题居中标题居中标题居中标题居中标题居中标题居中标题居中标题居中标题居中标题居中标题居中标题居中标题","align": "center","double": true},{"text": "左对齐标题左对齐标题左对齐标题左对齐标题左对齐标题左对齐标题左对齐标题左对齐标题左对齐标题左对齐标题左对齐标题左对齐标题左对齐标题左对齐标题左对齐标题左对齐标题左对齐标题左对齐标题左对齐标题左对齐标题左对齐标题左对齐标题左对齐标题左对齐标题左对齐标题","align": "left","double": true},{"text": "居中标题正文","align": "center","double": false},{"text": "左对齐正文左对齐正文左对齐正文左对齐正文左对齐正文左对齐正文左对齐正文左对齐正文左对齐正文左对齐正文左对齐正文左对齐正文左对齐正文左对齐正文左对齐正文左对齐正文左对齐正文左对齐正文左对齐正文左对齐正文左对齐正文左对齐正文左对齐正文左对齐正文左对齐正文左对齐正文左对齐正文左对齐正文左对齐正文左对齐正文左对齐正文左对齐正文左对齐正文左对齐正文左对齐正文左对齐正文左对齐正文左对齐正文","align": "left","double": false}]';  
+
+    window.location.href = "zxprinter://"+encodeURIComponent(str)
+}
+
+
+</script>  
+
+</head>
+<body>
+	<div class="contentdiv" id="content">
+		<br/>
+		<br/>
+		<br/>
+		<h1><a href='javascript:print();'>打印订单</a></h1>
+        <br/>
+        <br/>   
+        <br/>
+        <br/>
+        <br/>
+        <h1><a href='javascript:print2();'>打印demo</a></h1>
+        <br/>
+        <br/> 
+        <br/>
+        <br/>
+        <br/>
+        <h1><a href='javascript:print3();'>测试长订单</a></h1>
+        <br/>
+        <br/>     
+	</div>
+	<div style="display:none;position:absolute;z-index:1;">
+	</div>
+</body>
+</html>

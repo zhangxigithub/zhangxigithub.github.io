@@ -1,0 +1,74 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>张玺 zhangxi</title>
+<meta name="keywords" content="zhangxi.me,张玺,zhangxi,zhangxi_1989,dodo糯,effy"/>
+
+<style type="text/css">
+#dropz{
+    border-width: 1px;
+}
+                .contentdiv {
+                        text-align: center;
+                        position: absolute;
+                        width: 100%;
+                        padding-top: 100px;
+                        padding-bottom: 100px;
+                    }
+</style>     
+ 
+<script src="./dropzone.js"></script>
+
+</head>
+
+<body>
+
+
+
+
+    <!-- <div id="dropz"></div> -->
+
+    <input type="text" id="message" style="width:414px; height:50px;font-size: 40px" placeholder="input title here" />
+    <br/>
+    <img id="dropz" width="414" height="736" src="./bg.png" />
+
+
+
+
+
+<script>
+    var dropz = new Dropzone("#dropz", {
+        url: "api/upload",
+        maxFiles: 10,
+        maxFilesize: 512,
+        acceptedFiles: ".jpg,.jpeg,.png"
+    });
+
+    dropz.on("addedfile", function(file) {
+    	console.log(file)
+	});
+    dropz.on("success", function(file,response) {
+        console.log(file)
+        var path = response.result
+
+        //window.location.href = response.result
+
+        var image = document.getElementById("dropz")
+        image.src = response.result
+        image.download = response.result
+
+        //alert("sucess")
+        //alert(JSON.stringify(response))
+    });
+    dropz.on("sending", function(file, xhr, data) {
+        data.append("text", document.getElementById("message").value);
+    });
+
+
+
+
+</script>
+ 
+</body>
+</html>
