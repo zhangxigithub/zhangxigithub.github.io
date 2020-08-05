@@ -88,7 +88,22 @@ html, body {
 </style>     
 </head>
 <body>
-	<h4 style="text-align:center">Prep W</h4>
+	<h4 style="text-align:center">
+	<script>
+	var d = new Date();
+var weekday = new Array(7);
+weekday[0] = "Sunday";
+weekday[1] = "Monday";
+weekday[2] = "Tuesday";
+weekday[3] = "Wednesday";
+weekday[4] = "Thursday";
+weekday[5] = "Friday";
+weekday[6] = "Saturday";
+
+var n = weekday[d.getDay()];
+		document.write(n);
+	</script>
+	</h4>
 <table border="1" cellpadding="10" width="100%">
     <tr>
 	    <th>Time\ Day</th>
