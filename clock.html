@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Current Time</title>
+    <script type="text/javascript">
+      function displayTime(){
+          var date = new Date();
+          var hours = date.getHours();
+          var mins = date.getMinutes();
+          var secs = date.getSeconds();
+
+          if(hours < 10){  // if hours less than 10 then add a '0'
+              hours = "0" + hours;
+          }
+          if(mins < 10){  // if minutes less than 10 then add a '0'
+              mins = "0" + mins;
+          }
+          if(secs < 10){  // if seconds less than 10 then add a '0'
+              secs = "0" + secs;
+          }
+
+          var timeString = hours + ":" + mins + ":" + secs; 
+          document.getElementById("clock").innerHTML = timeString;
+      }
+
+      window.onload = function(){  // call displayTime function when page loads
+          setInterval(displayTime, 1000);  // Refresh the time every second (1000ms)
+      }       
+    </script>
+  </head>
+  <body>
+    <h1>Current Time:</h1>
+    <h2 id="clock"></h2>  <!-- the id here 'clock' is the same that we are using in JavaScript -->
+  </body>
+</html>
