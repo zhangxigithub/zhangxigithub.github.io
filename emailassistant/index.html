@@ -4,9 +4,10 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Email Assistant | AI Replies for Gmail and Outlook</title>
+    <link rel="icon" type="image/png" href="icon.png">
     <meta
         name="description"
-        content="Email Assistant helps you connect Gmail and Outlook, generate AI replies with account-specific settings, and save drafts back into the right inbox."
+        content="Email Assistant helps you connect Gmail and Outlook, auto-generate drafts for new threads, and save drafts back into the right inbox with account-specific settings."
     >
     <style>
         :root {
@@ -98,8 +99,6 @@
             height: 44px;
             padding: 6px;
             border-radius: 14px;
-            background: linear-gradient(145deg, rgba(13, 124, 134, 0.14), rgba(74, 102, 255, 0.15));
-            border: 1px solid rgba(13, 124, 134, 0.16);
             flex: 0 0 auto;
         }
 
@@ -338,7 +337,7 @@
 
         .features {
             display: grid;
-            grid-template-columns: repeat(3, minmax(0, 1fr));
+            grid-template-columns: repeat(4, minmax(0, 1fr));
             gap: 16px;
         }
 
@@ -519,7 +518,7 @@
     <div class="page">
         <header class="topbar">
             <div class="brand">
-                <img class="brand-mark" src="Resources/icon.icon/Assets/image.png" alt="Email Assistant app icon">
+                <img class="brand-mark" src="icon.png" alt="Email Assistant app icon">
                 <div class="brand-copy">
                     <strong>Email Assistant</strong>
                     <span>AI replies for Gmail and Outlook</span>
@@ -541,10 +540,10 @@
                     <h1>Reply faster without losing your voice.</h1>
                     <p>
                         Email Assistant connects Gmail and Outlook in one clean workspace, drafts replies using AI,
-                        keeps settings specific to each email account, and saves the draft back into the correct thread.
+                        keeps settings specific to each email account, and can automatically create and save a draft when polling finds a new thread.
                     </p>
                     <p>
-                        Start with a 7-day free trial, connect the inbox you need, and review every draft before it goes anywhere.
+                        Start with a 7-day free trial, connect the inbox you need, and review every draft before anything is sent.
                     </p>
                     <div class="hero-actions">
                         <a class="app-store-badge" href="https://apps.apple.com/us/app/email-assistant-ai-reply/id6762493968" target="_blank" rel="noreferrer" aria-label="Download Email Assistant on the Mac App Store">
@@ -571,8 +570,8 @@
                             <span>Subscription unlocks account connection before the first mailbox is added.</span>
                         </div>
                         <div class="metric">
-                            <strong>AI-generated drafts</strong>
-                            <span>Generate concise replies, then edit before saving back into drafts.</span>
+                            <strong>Auto-saved drafts</strong>
+                            <span>Create and save a draft automatically as soon as polling finds a new thread in that mailbox.</span>
                         </div>
                         <div class="metric">
                             <strong>Never auto-send</strong>
@@ -589,7 +588,7 @@
                     </div>
                     <p>
                         The app is built around the real workflow: connect the right mailbox, generate a reply that matches the account,
-                        review it, and save it back to the inbox where the conversation already lives.
+                        review it, and save it back to the inbox where the conversation already lives, including new threads found by polling.
                     </p>
                 </div>
                 <div class="features">
@@ -609,6 +608,13 @@
                     </article>
                     <article class="feature">
                         <div class="feature-mark">03</div>
+                        <h3>Auto-draft new threads</h3>
+                        <p>
+                            As soon as polling finds a new thread in a mailbox, Email Assistant can generate a reply and save it back as a draft automatically.
+                        </p>
+                    </article>
+                    <article class="feature">
+                        <div class="feature-mark">04</div>
                         <h3>Human review stays in control</h3>
                         <p>
                             AI helps with the draft, but you decide when to edit, save, or send. Nothing is sent automatically.
@@ -630,9 +636,10 @@
                     <div class="workflow-copy">
                         <h3>Built around the steps you actually take</h3>
                         <p>
-                            Start the free trial, add the email provider you use, open a thread, generate a response, and save it back
-                            into the same conversation. The app stays fast because it avoids unnecessary steps and keeps the important
-                            settings close to the account they belong to.
+                            Start the free trial, add the email provider you use, and let polling watch for new threads. When a new
+                            conversation appears in that mailbox, the app can generate a response and save it back into the same thread
+                            automatically. The app stays fast because it avoids unnecessary steps and keeps the important settings close
+                            to the account they belong to.
                         </p>
                         <p>
                             That means a warm personal Gmail account and a more direct work Outlook account can behave differently,
@@ -658,15 +665,15 @@
                             <li>
                                 <div class="step-number">3</div>
                                 <div>
-                                    <strong>Generate and review the reply</strong>
-                                    <p>Drafts follow the selected account’s tone, identity, signature, and draft behavior.</p>
+                                    <strong>Polling finds a new thread</strong>
+                                    <p>Email Assistant detects the conversation in the selected mailbox and starts the draft workflow immediately.</p>
                                 </div>
                             </li>
                             <li>
                                 <div class="step-number">4</div>
                                 <div>
-                                    <strong>Save to the correct thread</strong>
-                                    <p>The draft is written back into the matching Gmail or Outlook conversation.</p>
+                                    <strong>Auto-generate and save the draft</strong>
+                                    <p>The reply follows that account’s tone, identity, signature, and draft behavior, then is saved into the matching Gmail or Outlook thread.</p>
                                 </div>
                             </li>
                         </ol>
